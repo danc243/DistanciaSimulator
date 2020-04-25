@@ -11,9 +11,8 @@ func _ready():
 #func _process(delta):
 #	pass
 
-func icon_pressed():
+func __icon_pressed():
 	print("Parent Script")
 
 func _on_Desktop_Icon_pressed():
-	icon_pressed()
-
+	__icon_pressed()

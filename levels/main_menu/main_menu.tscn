@@ -19,8 +19,8 @@ __meta__ = {
 [node name="TextureRect" type="TextureRect" parent="."]
 anchor_right = 1.0
 anchor_bottom = 1.0
-margin_left = -143.88
-margin_right = 145.12
+margin_left = -147.563
+margin_right = 141.0
 margin_bottom = 12.0
 texture = ExtResource( 2 )
 expand = true
@@ -79,13 +79,15 @@ __meta__ = {
 [node name="Desktop Icon" parent="." instance=ExtResource( 1 )]
 anchor_right = 0.0
 anchor_bottom = 0.0
-margin_left = 87.1664
-margin_top = 123.329
-margin_right = 163.166
-margin_bottom = 193.329
+margin_left = 66.2949
+margin_top = 72.9917
+margin_right = 142.295
+margin_bottom = 142.992
 
 [node name="Game Icon" parent="." instance=ExtResource( 3 )]
-margin_left = 105.82
-margin_top = 283.332
-margin_right = 105.82
-margin_bottom = 267.532
+anchor_right = 0.0
+anchor_bottom = 0.0
+margin_left = 195.445
+margin_top = 68.4778
+margin_right = 259.445
+margin_bottom = 138.478
