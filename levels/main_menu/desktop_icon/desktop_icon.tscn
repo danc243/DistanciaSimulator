@@ -1,0 +1,14 @@
+[gd_scene load_steps=3 format=2]
+
+[ext_resource path="res://icon.png" type="Texture" id=1]
+[ext_resource path="res://levels/main_menu/desktop_icon/desktop_icon.gd" type="Script" id=2]
+
+[node name="Desktop Icon" type="Button"]
+margin_right = 65.0
+margin_bottom = 65.0
+icon = ExtResource( 1 )
+script = ExtResource( 2 )
+__meta__ = {
+"_edit_use_anchors_": false
+}
+[connection signal="pressed" from="." to="." method="_on_Desktop_Icon_pressed"]
