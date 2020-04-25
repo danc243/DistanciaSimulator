@@ -4,10 +4,24 @@
 [ext_resource path="res://levels/main_menu/desktop_icon/desktop_icon.gd" type="Script" id=2]
 
 [node name="Desktop Icon" type="Button"]
-margin_right = 65.0
-margin_bottom = 65.0
+anchor_right = 0.095
+anchor_bottom = 0.143
+margin_right = -11.0
+margin_bottom = -20.8
 icon = ExtResource( 1 )
 script = ExtResource( 2 )
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="RichTextLabel" type="RichTextLabel" parent="."]
+anchor_top = 1.0
+anchor_right = 1.0
+anchor_bottom = 1.652
+margin_left = 0.00505233
+margin_top = 0.27739
+margin_bottom = 0.308708
+text = "Nombre juego"
 __meta__ = {
 "_edit_use_anchors_": false
 }
