@@ -16,7 +16,12 @@ _global_script_class_icons={
 [application]
 
 config/name="Distancia Simulator"
+run/main_scene="res://levels/main_menu/main_menu.tscn"
 config/icon="res://icon.png"
+
+[display]
+
+window/size/width=800
 
 [rendering]
 
