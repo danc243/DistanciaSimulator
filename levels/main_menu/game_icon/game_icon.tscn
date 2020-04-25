@@ -13,6 +13,4 @@ script = ExtResource( 2 )
 
 [node name="RichTextLabel" parent="." index="0"]
 anchor_bottom = 2.016
-margin_left = 0.0
-margin_top = 0.0
 margin_bottom = -0.0240021
