@@ -6,8 +6,8 @@ var _color_red = Color(0.486275, 0.152941, 0.152941,1)
 onready var rect = $ColorRect
 onready var timer = $Timer
 
+signal timer_gamer_out
 
-# Called when the node enters the scene tree for the first time.
 func _ready():
 	rect.color = _color_green
 
@@ -26,4 +26,6 @@ func _process(delta):
 
 func _on_Timer_timeout():
 	print("Se acabó")
-	pass # Replace with function body.
+	var parent = get_parent()
+	if parent != null and parent is WindowContainer:
+		emit_signal("timer_gamer_out")
