@@ -1,0 +1,63 @@
+[gd_scene load_steps=8 format=2]
+
+[ext_resource path="res://actors/quickscope/Crosshair.tscn" type="PackedScene" id=1]
+[ext_resource path="res://assets/cursed.jpg" type="Texture" id=2]
+[ext_resource path="res://assets/quickly.webm" type="VideoStream" id=3]
+[ext_resource path="res://levels/quickscope/Quickscope.gd" type="Script" id=4]
+[ext_resource path="res://actors/quickscope/EnemiesSpawner.tscn" type="PackedScene" id=5]
+
+[sub_resource type="Shader" id=1]
+code = "shader_type canvas_item;
+
+uniform sampler2D diffuse;
+
+void fragment() {
+    vec4 alpha = texture(TEXTURE, UV);
+	
+	if(alpha.g == 0.0 && alpha.r==0.0 && alpha.b==0.0){
+		alpha.a = 0.0;
+	}
+	
+	if(alpha.g >= 0.35 && alpha.r<0.32 && alpha.b<0.32) {
+        alpha.a = 0.0;
+    }
+	
+    COLOR = alpha;
+}
+"
+
+[sub_resource type="ShaderMaterial" id=2]
+shader = SubResource( 1 )
+
+[node name="TestLevel" type="Node2D"]
+
+[node name="cursed" type="Sprite" parent="."]
+position = Vector2( 400, 300 )
+scale = Vector2( 1.3245, 1.76471 )
+texture = ExtResource( 2 )
+
+[node name="Spawner" parent="." instance=ExtResource( 5 )]
+centro = Vector2( 400, 300 )
+right = 800.0
+down = 600.0
+_addedTimer = 0.0
+_spawnedSpeed = Vector2( 300, 0 )
+_speedRNGRange = Vector2( 0, 0 )
+
+[node name="Crosshair" parent="." instance=ExtResource( 1 )]
+position = Vector2( 400, 300 )
+
+[node name="Quickscope" type="VideoPlayer" parent="."]
+material = SubResource( 2 )
+margin_left = 20.0
+margin_top = 7.0
+margin_right = 820.0
+margin_bottom = 607.0
+stream = ExtResource( 3 )
+volume_db = -45.56
+buffering_msec = 1000
+script = ExtResource( 4 )
+__meta__ = {
+"_edit_use_anchors_": false
+}
+[connection signal="finished" from="Quickscope" to="Quickscope" method="_on_Quickscope_finished"]

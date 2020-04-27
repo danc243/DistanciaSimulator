@@ -1,8 +1,9 @@
-[gd_scene load_steps=6 format=2]
+[gd_scene load_steps=7 format=2]
 
 [ext_resource path="res://levels/main_menu/desktop_icon/desktop_icon.tscn" type="PackedScene" id=1]
 [ext_resource path="res://assets/34778.jpg" type="Texture" id=2]
 [ext_resource path="res://levels/main_menu/game_icon/game_icon.tscn" type="PackedScene" id=3]
+[ext_resource path="res://levels/quickscope/TestLevel.tscn" type="PackedScene" id=4]
 
 [sub_resource type="Shader" id=1]
 code = "shader_type canvas_item;
@@ -59,8 +60,10 @@ margin_top = -2.44353
 margin_right = -2.44348
 margin_bottom = -2.44354
 __meta__ = {
+"_edit_horizontal_guides_": [ 600.316 ],
 "_edit_lock_": true,
-"_edit_use_anchors_": false
+"_edit_use_anchors_": false,
+"_edit_vertical_guides_": [ 800.421 ]
 }
 
 [node name="image" type="TextureRect" parent="."]
@@ -148,3 +151,15 @@ margin_left = 195.445
 margin_top = 68.4778
 margin_right = 259.445
 margin_bottom = 138.478
+
+[node name="GamesViewport" type="ViewportContainer" parent="."]
+margin_left = 200.0
+margin_top = 150.0
+margin_right = 600.0
+margin_bottom = 450.0
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="TestLevel" parent="GamesViewport" instance=ExtResource( 4 )]
+scale = Vector2( 0.5, 0.5 )
