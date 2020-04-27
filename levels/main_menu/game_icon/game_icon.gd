@@ -8,7 +8,5 @@ func __icon_pressed():
 	var instance = node.instance()
 	var ventana = get_tree().get_root().get_node("Control").get_node("handler")
 	ventana.add_child(instance)
-#	instance.set_global_position(Vector2(200,150))
-#	get_node("/root").add_child(instance)
 	pass
 

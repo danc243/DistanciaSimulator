@@ -10,7 +10,10 @@ var currentNode
 func _ready():
 	currentNode = testLevel
 	viewport.add_child(currentNode)
-	pass
+	timerGamer.timer.wait_time = 10
+	timerGamer.timer.start()
+	
+	
 
 func _input(event):
 	pass

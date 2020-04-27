@@ -4,7 +4,7 @@ var _color_green = Color(0.141176, 0.411765, 0.266667,1)
 var _color_red = Color(0.486275, 0.152941, 0.152941,1)
 
 onready var rect = $ColorRect
-onready var timer = $Timer
+onready var timer: Timer = $Timer
 
 signal timer_gamer_out
 
