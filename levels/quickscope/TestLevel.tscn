@@ -30,6 +30,7 @@ void fragment() {
 shader = SubResource( 1 )
 
 [node name="TestLevel" type="Node2D"]
+scale = Vector2( 0.5, 0.5 )
 
 [node name="cursed" type="Sprite" parent="."]
 position = Vector2( 400, 300 )
@@ -49,10 +50,8 @@ position = Vector2( 400, 300 )
 
 [node name="Quickscope" type="VideoPlayer" parent="."]
 material = SubResource( 2 )
-margin_left = 20.0
-margin_top = 7.0
-margin_right = 820.0
-margin_bottom = 607.0
+margin_right = 800.0
+margin_bottom = 600.0
 stream = ExtResource( 3 )
 volume_db = -45.56
 buffering_msec = 1000
