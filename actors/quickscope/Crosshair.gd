@@ -7,6 +7,7 @@ func _ready() -> void:
 
 
 func _input(event: InputEvent) -> void:
+	var si: Area2D
 	if(event.is_action_pressed("action") && !_losQuicks.is_playing()):
 		
 		var oye = get_node("Shooting").get_overlapping_bodies()
