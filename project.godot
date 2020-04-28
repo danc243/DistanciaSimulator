@@ -9,12 +9,18 @@
 config_version=4
 
 _global_script_classes=[ {
+"base": "Node",
+"class": "QuedateEnCasaLevel",
+"language": "GDScript",
+"path": "res://levels/quedate_en_casa/qudate_en_casa.gd"
+}, {
 "base": "ViewportContainer",
 "class": "WindowContainer",
 "language": "GDScript",
 "path": "res://actors/window_game/window_container.gd"
 } ]
 _global_script_class_icons={
+"QuedateEnCasaLevel": "",
 "WindowContainer": ""
 }
 

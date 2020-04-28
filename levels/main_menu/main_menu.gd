@@ -16,5 +16,4 @@ func _on_Game_Icon_on_pressed_button():
 
 
 func _on_Desktop_Icon_on_pressed_button():
-	print("Desktop icon presionado en Control Root")
 	pass

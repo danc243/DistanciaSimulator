@@ -7,20 +7,19 @@ onready var testLevel = preload("res://levels/se_busca/se_busca.tscn").instance(
 onready var timerGamer  = $TimerGame
 var currentNode
 
+signal handlerTimerStart
+signal handlerTimerEnd
+
 func _ready():
 	currentNode = testLevel
 	viewport.add_child(currentNode)
-	timerGamer.timer.wait_time = 10
-	timerGamer.timer.start()
+	timerGamer.initTimer(2)
 	
-	
-
-func _input(event):
-	pass
-#	if event.is_action_pressed("ui_up") && viewport.is_a_parent_of(currentNode):
-#		viewport.remove_child(currentNode)
-#		currentNode = load("res://actors/timer/timer.tscn").instance()
-#		viewport.add_child(currentNode)
-
 func _on_TimerGame_timer_gamer_out():
-	print("Se acabó desde el padre")
+	viewport.remove_child(currentNode)
+	currentNode = load("res://levels/quedate_en_casa/qudate_en_casa.tscn").instance() as QuedateEnCasaLevel
+	currentNode.init(5, "handlerTimerStart", "handlerTimerEnd")
+	viewport.add_child(currentNode)
+
+func _on_TimerGame_timer_gamer_start():
+	pass
