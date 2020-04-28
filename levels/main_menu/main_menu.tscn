@@ -1,8 +1,9 @@
-[gd_scene load_steps=6 format=2]
+[gd_scene load_steps=7 format=2]
 
 [ext_resource path="res://levels/main_menu/desktop_icon/desktop_icon.tscn" type="PackedScene" id=1]
 [ext_resource path="res://assets/34778.jpg" type="Texture" id=2]
 [ext_resource path="res://levels/main_menu/game_icon/game_icon.tscn" type="PackedScene" id=3]
+[ext_resource path="res://levels/main_menu/main_menu.gd" type="Script" id=4]
 
 [sub_resource type="Shader" id=1]
 code = "shader_type canvas_item;
@@ -59,8 +60,8 @@ margin_top = -2.44353
 margin_right = -2.44348
 margin_bottom = -2.44354
 mouse_filter = 2
+script = ExtResource( 4 )
 __meta__ = {
-"_edit_lock_": true,
 "_edit_use_anchors_": false
 }
 
@@ -165,3 +166,5 @@ color = Color( 0.666667, 0.666667, 0.666667, 1 )
 __meta__ = {
 "_edit_use_anchors_": false
 }
+[connection signal="on_pressed_button" from="Desktop Icon" to="." method="_on_Desktop_Icon_on_pressed_button"]
+[connection signal="on_pressed_button" from="Game Icon" to="." method="_on_Game_Icon_on_pressed_button"]

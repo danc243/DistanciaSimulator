@@ -1,18 +1,14 @@
 extends Button
 
-
 onready var label_name = $RichTextLabel
+signal on_pressed_button
 
 func _ready():
 	label_name.text = name
-	pass # Replace with function body.
-
-# Called every frame. 'delta' is the elapsed time since the previous frame.
-#func _process(delta):
-#	pass
+	pass 
 
 func __icon_pressed():
-	print("Parent Script")
+	emit_signal("on_pressed_button")
 
 func _on_Desktop_Icon_pressed():
 	__icon_pressed()
