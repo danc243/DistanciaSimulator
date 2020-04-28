@@ -58,6 +58,7 @@ margin_left = -2.44351
 margin_top = -2.44353
 margin_right = -2.44348
 margin_bottom = -2.44354
+mouse_filter = 2
 __meta__ = {
 "_edit_lock_": true,
 "_edit_use_anchors_": false
@@ -69,6 +70,7 @@ anchor_bottom = 1.0
 margin_left = -147.563
 margin_right = 141.0
 margin_bottom = 12.0
+mouse_filter = 2
 texture = ExtResource( 2 )
 expand = true
 __meta__ = {
@@ -99,6 +101,7 @@ margin_left = 240.0
 margin_top = 60.0
 margin_right = 240.0
 margin_bottom = 60.0
+mouse_filter = 2
 __meta__ = {
 "_edit_use_anchors_": false
 }

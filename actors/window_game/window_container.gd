@@ -3,7 +3,7 @@ extends ViewportContainer
 class_name WindowContainer
 
 onready var viewport = $Viewport
-onready var testLevel = preload("res://levels/quickscope/TestLevel.tscn").instance()
+onready var testLevel = preload("res://levels/se_busca/se_busca.tscn").instance()
 onready var timerGamer  = $TimerGame
 var currentNode
 

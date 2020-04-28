@@ -1,3 +1,19 @@
-[gd_scene format=2]
+[gd_scene load_steps=3 format=2]
+
+[ext_resource path="res://levels/se_busca/se_busca.gd" type="Script" id=1]
+[ext_resource path="res://actors/se_busca/El Buscado.tscn" type="PackedScene" id=2]
 
 [node name="Level" type="Node2D"]
+script = ExtResource( 1 )
+__meta__ = {
+"_edit_horizontal_guides_": [ 599.622 ],
+"_edit_vertical_guides_": [ 800.207 ]
+}
+
+[node name="Las Personas" type="Node2D" parent="."]
+scale = Vector2( 0.3, 0.3 )
+
+[node name="El Buscado" parent="." instance=ExtResource( 2 )]
+margin_left = 343.0
+margin_right = 533.0
+rect_scale = Vector2( 0.6, 0.6 )

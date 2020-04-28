@@ -4,8 +4,6 @@
 [ext_resource path="res://levels/main_menu/game_icon/game_icon.gd" type="Script" id=2]
 [ext_resource path="res://assets/icon_taco.png" type="Texture" id=3]
 
-
-
 [node name="Desktop Icon" instance=ExtResource( 1 )]
 anchor_right = 0.08
 anchor_bottom = 0.107

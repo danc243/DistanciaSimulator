@@ -1,0 +1,60 @@
+[gd_scene load_steps=3 format=2]
+
+[ext_resource path="res://actors/se_busca/El Buscado.gd" type="Script" id=1]
+[ext_resource path="res://assets/se_busca/0_Face.png" type="Texture" id=2]
+
+[node name="El Buscado" type="Control"]
+margin_right = 190.0
+margin_bottom = 190.0
+script = ExtResource( 1 )
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="ColorRect" type="ColorRect" parent="."]
+margin_right = 190.0
+margin_bottom = 190.0
+color = Color( 0, 0, 0, 1 )
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="face" type="Sprite" parent="."]
+position = Vector2( 95, 95 )
+texture = ExtResource( 2 )
+region_enabled = true
+region_rect = Rect2( 0, 0, 180, 180 )
+
+[node name="Left" type="ColorRect" parent="."]
+margin_right = 12.0
+margin_bottom = 190.0
+color = Color( 0.701961, 0.027451, 0.027451, 1 )
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="Right" type="ColorRect" parent="."]
+margin_left = 178.0
+margin_right = 190.0
+margin_bottom = 190.0
+color = Color( 0.701961, 0.027451, 0.027451, 1 )
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="Up" type="ColorRect" parent="."]
+margin_right = 190.0
+margin_bottom = 12.0
+color = Color( 0.701961, 0.027451, 0.027451, 1 )
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="Down" type="ColorRect" parent="."]
+margin_top = 178.0
+margin_right = 190.0
+margin_bottom = 190.0
+color = Color( 0.701961, 0.027451, 0.027451, 1 )
+__meta__ = {
+"_edit_use_anchors_": false
+}

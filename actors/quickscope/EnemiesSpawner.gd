@@ -20,6 +20,7 @@ var _rng = RandomNumberGenerator.new()
 # Solo puede llegar a 1.5s de minimo
 
 func _ready() -> void:
+	_rng.randomize()
 	startTimer()
 
 func _on_Timer_timeout() -> void:
