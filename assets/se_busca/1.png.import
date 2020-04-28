@@ -2,15 +2,15 @@
 
 importer="texture"
 type="StreamTexture"
-path="res://.import/cursed.jpg-863885903705997eb93618a3844797e7.stex"
+path="res://.import/1.png-a2b3496ed42f2e2f64c0c39d7bb5e2dd.stex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://assets/cursed.jpg"
-dest_files=[ "res://.import/cursed.jpg-863885903705997eb93618a3844797e7.stex" ]
+source_file="res://assets/se_busca/1.png"
+dest_files=[ "res://.import/1.png-a2b3496ed42f2e2f64c0c39d7bb5e2dd.stex" ]
 
 [params]
 

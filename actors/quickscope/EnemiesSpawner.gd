@@ -51,3 +51,7 @@ func lowerAddedTimer() -> void:
 		return
 	_addedTimer -= 0.25
 
+
+
+func _on_Area2D_body_entered(body: Node) -> void:
+	body.queue_free()

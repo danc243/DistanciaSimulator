@@ -1,8 +1,8 @@
-[gd_scene load_steps=8 format=2]
+[gd_scene load_steps=9 format=2]
 
 [ext_resource path="res://actors/quickscope/Crosshair.tscn" type="PackedScene" id=1]
-[ext_resource path="res://assets/cursed.jpg" type="Texture" id=2]
-[ext_resource path="res://assets/quickly.webm" type="VideoStream" id=3]
+[ext_resource path="res://assets/quickscope/cursed.jpg" type="Texture" id=2]
+[ext_resource path="res://assets/quickscope/quickly.webm" type="VideoStream" id=3]
 [ext_resource path="res://levels/quickscope/Quickscope.gd" type="Script" id=4]
 [ext_resource path="res://actors/quickscope/EnemiesSpawner.tscn" type="PackedScene" id=5]
 
@@ -29,8 +29,10 @@ void fragment() {
 [sub_resource type="ShaderMaterial" id=2]
 shader = SubResource( 1 )
 
+[sub_resource type="RectangleShape2D" id=3]
+extents = Vector2( 28.1931, 307.099 )
+
 [node name="TestLevel" type="Node2D"]
-scale = Vector2( 0.5, 0.5 )
 
 [node name="cursed" type="Sprite" parent="."]
 position = Vector2( 400, 300 )
@@ -59,4 +61,11 @@ script = ExtResource( 4 )
 __meta__ = {
 "_edit_use_anchors_": false
 }
+
+[node name="Area2D" type="Area2D" parent="."]
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Area2D"]
+position = Vector2( 1008.31, 298.278 )
+shape = SubResource( 3 )
 [connection signal="finished" from="Quickscope" to="Quickscope" method="_on_Quickscope_finished"]
+[connection signal="body_entered" from="Area2D" to="Spawner" method="_on_Area2D_body_entered"]

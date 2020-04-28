@@ -2,15 +2,15 @@
 
 importer="texture"
 type="StreamTexture"
-path="res://.import/hitmark.png-52e24b6a4cd2daf31570519424b12996.stex"
+path="res://.import/crosshair.png-c40822d3f1375985b4b44cfc732d49be.stex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://assets/hitmark.png"
-dest_files=[ "res://.import/hitmark.png-52e24b6a4cd2daf31570519424b12996.stex" ]
+source_file="res://assets/quickscope/crosshair.png"
+dest_files=[ "res://.import/crosshair.png-c40822d3f1375985b4b44cfc732d49be.stex" ]
 
 [params]
 

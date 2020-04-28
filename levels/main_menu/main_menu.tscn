@@ -59,10 +59,8 @@ margin_top = -2.44353
 margin_right = -2.44348
 margin_bottom = -2.44354
 __meta__ = {
-"_edit_horizontal_guides_": [ 600.316 ],
 "_edit_lock_": true,
-"_edit_use_anchors_": false,
-"_edit_vertical_guides_": [ 800.421 ]
+"_edit_use_anchors_": false
 }
 
 [node name="image" type="TextureRect" parent="."]
@@ -97,10 +95,10 @@ shortcut_in_tooltip = false
 enabled_focus_mode = 0
 
 [node name="handler" type="Control" parent="."]
-margin_left = 200.0
-margin_top = 150.0
-margin_right = 200.0
-margin_bottom = 150.0
+margin_left = 240.0
+margin_top = 60.0
+margin_right = 240.0
+margin_bottom = 60.0
 __meta__ = {
 "_edit_use_anchors_": false
 }

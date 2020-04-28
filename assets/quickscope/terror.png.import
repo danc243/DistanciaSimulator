@@ -2,15 +2,15 @@
 
 importer="texture"
 type="StreamTexture"
-path="res://.import/terror.png-afff19e52c5671909c3c776291b9da20.stex"
+path="res://.import/terror.png-0c02e520c9be1588c404e758554dd893.stex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://assets/terror.png"
-dest_files=[ "res://.import/terror.png-afff19e52c5671909c3c776291b9da20.stex" ]
+source_file="res://assets/quickscope/terror.png"
+dest_files=[ "res://.import/terror.png-0c02e520c9be1588c404e758554dd893.stex" ]
 
 [params]
 
