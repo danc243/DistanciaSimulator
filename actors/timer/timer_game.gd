@@ -1,5 +1,7 @@
 extends Control
 
+class_name TimerGamer
+
 var _color_green = Color(0.141176, 0.411765, 0.266667,1)
 var _color_red = Color(0.486275, 0.152941, 0.152941,1)
 
@@ -30,6 +32,4 @@ func initTimer(wait_time: float):
 	pass
 
 func _on_Timer_timeout():
-	var parent = get_parent()
-	if parent != null and parent is WindowContainer:
-		emit_signal("timer_gamer_out")
+	emit_signal("timer_gamer_out")
