@@ -45,9 +45,11 @@ texture = ExtResource( 2 )
 centro = Vector2( 400, 300 )
 right = 800.0
 down = 600.0
+_baseTimer = 1.0
 _addedTimer = 0.0
-_spawnedSpeed = Vector2( 300, 0 )
-_speedRNGRange = Vector2( 0, 0 )
+_timerRNGRange = 0.5
+_spawnedSpeed = Vector2( 400, 0 )
+_speedRNGRange = Vector2( 250, 0 )
 
 [node name="Crosshair" parent="." instance=ExtResource( 1 )]
 position = Vector2( 400, 300 )

@@ -10,6 +10,8 @@ export var _baseTimer:= 1.5
 export var _addedTimer: = 5.0
 export var _timerRNGRange:= 1.0
 
+var firstTime = true
+
 export var _spawnedSpeed:= Vector2(1500,0)
 export var _speedRNGRange:= Vector2(500,0)
 
@@ -35,7 +37,12 @@ func spawnEnemy() -> void:
 	get_parent().get_node("Spawner").add_child(spawned)
 
 func calculateTimer() -> float:
-	var out = _baseTimer + _addedTimer + _rng.randf_range(-_timerRNGRange, _timerRNGRange)
+	var out
+	out = _baseTimer + _addedTimer + _rng.randf_range(-_timerRNGRange, _timerRNGRange)
+	if(firstTime):
+		out/=4
+		firstTime=false
+	
 	return out
 
 func calculateSpeed() -> Vector2:
