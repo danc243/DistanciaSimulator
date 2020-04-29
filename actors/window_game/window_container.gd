@@ -3,9 +3,9 @@ extends ViewportContainer
 class_name WindowContainer
 
 onready var viewport = $Viewport
-onready var testLevel = preload("res://levels/se_busca/se_busca.tscn").instance()
+#onready var testLevel = preload("res://levels/se_busca/se_busca.tscn").instance() as MinigameLogic
 onready var timerGamer  = $TimerGame
-var currentNode
+var currentNode = null
 const cantidadDeMinijuegos: int = 3
 
 var _rng = RandomNumberGenerator.new()
@@ -14,9 +14,10 @@ signal timerEndsParent
 
 func _ready():
 	_rng.randomize()
-	currentNode = testLevel
-	viewport.add_child(currentNode)
-	timerGamer.initTimer(2)
+	#currentNode = testLevel
+	#viewport.add_child(currentNode)
+	#timerGamer.initTimer(2)
+	_loadLevel()
 
 
 func _on_TimerGame_timer_gamer_start():
@@ -28,7 +29,9 @@ func _on_TimerGame_timer_gamer_out():
 	_loadLevel()
 
 func _loadLevel()->void:
-	viewport.remove_child(currentNode)
+	if(currentNode!=null):
+		viewport.remove_child(currentNode)
+		currentNode.queue_free()
 	
 	var ran = _rng.randi_range(0, cantidadDeMinijuegos-1)
 	var st: String = ""

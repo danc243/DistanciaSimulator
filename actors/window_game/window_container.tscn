@@ -13,9 +13,39 @@ __meta__ = {
 "_edit_use_anchors_": false
 }
 
+[node name="BlockMouse" type="Control" parent="."]
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="Left" type="Control" parent="BlockMouse"]
+margin_left = -459.0
+margin_top = -188.0
+margin_right = -1.0
+margin_bottom = 720.0
+
+[node name="Right" type="Control" parent="BlockMouse"]
+margin_left = 800.0
+margin_top = -188.0
+margin_right = 1279.0
+margin_bottom = 720.0
+
+[node name="Up" type="Control" parent="BlockMouse"]
+margin_left = -575.0
+margin_top = -426.0
+margin_right = 1706.0
+margin_bottom = -1.0
+
+[node name="Down" type="Control" parent="BlockMouse"]
+margin_left = -575.0
+margin_top = 600.0
+margin_right = 1706.0
+margin_bottom = 1025.0
+
 [node name="WindowContainer" type="ViewportContainer" parent="."]
 margin_right = 800.0
 margin_bottom = 600.0
+mouse_filter = 2
 script = ExtResource( 1 )
 __meta__ = {
 "_edit_use_anchors_": false
