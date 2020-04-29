@@ -1,4 +1,4 @@
-extends Node2D
+extends MinigameLogic
 
 export var dificultad: int = 0
 var _buscado: int = 0
