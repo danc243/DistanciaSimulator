@@ -3,12 +3,11 @@
 [ext_resource path="res://actors/window_game/window_game.gd" type="Script" id=1]
 [ext_resource path="res://actors/timer/timer_game.tscn" type="PackedScene" id=2]
 
-[node name="Node" type="Control"]
+[node name="WindowGame" type="Control"]
 anchor_right = 1.0
 anchor_bottom = 1.0
-margin_right = -1280.0
-margin_bottom = -720.0
 mouse_filter = 2
+script = ExtResource( 1 )
 __meta__ = {
 "_edit_use_anchors_": false
 }
@@ -17,7 +16,6 @@ __meta__ = {
 margin_right = 800.0
 margin_bottom = 600.0
 mouse_filter = 2
-script = ExtResource( 1 )
 __meta__ = {
 "_edit_use_anchors_": false
 }
@@ -31,5 +29,54 @@ handle_input_locally = false
 usage = 0
 render_target_update_mode = 3
 physics_object_picking = true
-[connection signal="timer_gamer_out" from="WindowContainer/TimerGame" to="WindowContainer" method="_on_TimerGame_timer_gamer_out"]
-[connection signal="timer_gamer_start" from="WindowContainer/TimerGame" to="WindowContainer" method="_on_TimerGame_timer_gamer_start"]
+
+[node name="Lifes" type="HSplitContainer" parent="."]
+margin_right = 58.0
+margin_bottom = 14.0
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="StaticLabel" type="Label" parent="Lifes"]
+margin_right = 38.0
+margin_bottom = 14.0
+text = "Vidas:"
+__meta__ = {
+"_edit_lock_": true
+}
+
+[node name="LifeLabel" type="Label" parent="Lifes"]
+margin_left = 50.0
+margin_right = 58.0
+margin_bottom = 14.0
+text = "5"
+__meta__ = {
+"_edit_lock_": true
+}
+
+[node name="Streak" type="HSplitContainer" parent="."]
+anchor_left = 1.0
+anchor_right = 1.0
+margin_left = -49.0
+margin_bottom = 14.0
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="StaticLabel" type="Label" parent="Streak"]
+margin_right = 37.0
+margin_bottom = 14.0
+text = "Racha"
+__meta__ = {
+"_edit_lock_": true
+}
+
+[node name="StreakLabel" type="Label" parent="Streak"]
+margin_left = 49.0
+margin_right = 49.0
+margin_bottom = 14.0
+__meta__ = {
+"_edit_lock_": true
+}
+[connection signal="timer_gamer_out" from="WindowContainer/TimerGame" to="." method="_on_TimerGame_timer_gamer_out"]
+[connection signal="timer_gamer_start" from="WindowContainer/TimerGame" to="." method="_on_TimerGame_timer_gamer_start"]

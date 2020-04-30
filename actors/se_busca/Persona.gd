@@ -13,7 +13,8 @@ func _ready() -> void:
 
 func _on_Area2D_input_event(viewport: Node, event: InputEvent, shape_idx: int) -> void:
 	if(event.is_action_pressed("left_click") && _isBuscado):
-		_level.have_won()
+		if _level != null:
+			_level.have_won()
 
 func esElBuscado(si:bool, level:MinigameLogic)->void :
 	_isBuscado = si
