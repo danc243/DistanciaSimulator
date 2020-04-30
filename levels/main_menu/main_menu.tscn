@@ -78,7 +78,14 @@ __meta__ = {
 "_edit_use_anchors_": false
 }
 
-[node name="Desktop Icon" parent="." instance=ExtResource( 1 )]
+[node name="buttons" type="Control" parent="."]
+anchor_right = 1.0
+anchor_bottom = 1.0
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="Desktop Icon" parent="buttons" instance=ExtResource( 1 )]
 anchor_right = 0.0
 anchor_bottom = 0.0
 margin_left = 66.2949
@@ -86,7 +93,7 @@ margin_top = 72.9917
 margin_right = 142.295
 margin_bottom = 142.992
 
-[node name="Game Icon" parent="." instance=ExtResource( 3 )]
+[node name="Game Icon" parent="buttons" instance=ExtResource( 3 )]
 anchor_right = 0.0
 anchor_bottom = 0.0
 margin_left = 195.445
@@ -166,5 +173,5 @@ color = Color( 0.666667, 0.666667, 0.666667, 1 )
 __meta__ = {
 "_edit_use_anchors_": false
 }
-[connection signal="on_pressed_button" from="Desktop Icon" to="." method="_on_Desktop_Icon_on_pressed_button"]
-[connection signal="on_pressed_button" from="Game Icon" to="." method="_on_Game_Icon_on_pressed_button"]
+[connection signal="on_pressed_button" from="buttons/Desktop Icon" to="." method="_on_Desktop_Icon_on_pressed_button"]
+[connection signal="on_pressed_button" from="buttons/Game Icon" to="." method="_on_Game_Icon_on_pressed_button"]

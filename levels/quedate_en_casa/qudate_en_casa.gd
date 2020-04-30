@@ -11,3 +11,9 @@ func _input(event):
 
 func _on_AreaCharacter_area_entered(area):
 	emit_signal("you_lose")
+	
+
+func _timer_end():
+	emit_signal("you_win")
+	__disconnect()
+	pass

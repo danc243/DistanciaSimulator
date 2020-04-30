@@ -47,12 +47,12 @@ func _spawnPerson(quePersona: int, esElBuscado: bool, pos: Vector2, elNivel, spa
 	LasPersonas.add_child(spawned)
 	pass
 
-func have_won()-> void:
+func have_won():
 	# wait so how?
 	# ._timer_end()
 	.have_won()
-	print("have_won en se_busca")
 	pass
+
 
 func have_lost()-> void:
 	# wait so how?
@@ -61,11 +61,9 @@ func have_lost()-> void:
 	pass
 
 func _timer_start():
-	print("inició el timer en se_busca")
 	._timer_start()
 	pass
 
 func _timer_end():
-	print ("terminó el timer en se_busca")
 	._timer_end()
 	pass
