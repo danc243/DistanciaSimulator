@@ -25,15 +25,15 @@ _global_script_classes=[ {
 "path": "res://actors/timer/timer_game.gd"
 }, {
 "base": "ViewportContainer",
-"class": "WindowContainer",
+"class": "WindowGame",
 "language": "GDScript",
-"path": "res://actors/window_game/window_container.gd"
+"path": "res://actors/window_game/window_game.gd"
 } ]
 _global_script_class_icons={
 "MinigameLogic": "",
 "QuedateEnCasaLevel": "",
 "TimerGamer": "",
-"WindowContainer": ""
+"WindowGame": ""
 }
 
 [application]

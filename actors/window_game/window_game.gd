@@ -1,6 +1,6 @@
 extends ViewportContainer
 
-class_name WindowContainer
+class_name WindowGame
 
 onready var viewport = $Viewport
 onready var timerGamer  = $TimerGame

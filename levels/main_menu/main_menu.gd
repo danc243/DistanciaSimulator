@@ -2,6 +2,7 @@ extends Control
 
 onready var nodeHandler = $handler
 var elNodoVentana = null
+onready var buttons = $buttons
 
 func _ready():
 	pass
@@ -10,7 +11,7 @@ func _on_Game_Icon_on_pressed_button():
 	if nodeHandler.get_child_count() > 0:
 		print("El juego ya está activo")
 	else:
-		var node = load("res://actors/window_game/window_container.tscn")
+		var node = load("res://actors/window_game/window_game.tscn")
 		elNodoVentana = node.instance()
 		var ventana = get_tree().get_root().get_node("Control").get_node("handler")
 		ventana.add_child(elNodoVentana)
