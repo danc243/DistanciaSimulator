@@ -17,13 +17,17 @@ func _timer_start():
 	pass
 
 func _timer_end():
-	__disconnect()
+	have_lost()
 	pass
 
 func have_won():
+	emit_signal("you_win")
+	__disconnect()
 	pass
 
 func have_lost():
+	emit_signal("you_lose")
+	__disconnect()
 	pass
 
 func __disconnect():

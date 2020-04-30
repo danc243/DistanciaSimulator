@@ -8,6 +8,7 @@ var currentNode = null
 const cantidadDeMinijuegos: int = 3
 
 var lifes = 5
+var streak = 0
 
 var _rng = RandomNumberGenerator.new()
 
@@ -24,7 +25,6 @@ func _on_TimerGame_timer_gamer_start():
 
 func _on_TimerGame_timer_gamer_out():
 	emit_signal("timerEndsParent")
-	_loadLevel()
 
 func _loadLevel()->void:
 	if(currentNode!=null):
@@ -52,10 +52,15 @@ func _loadLevel()->void:
 	pass
 
 func you_lose_game():
-	lifes  = lifes - 1
-	print("you lose")
-	pass
+	lifes-=1
+	if lifes > 0:
+		_loadLevel()
+	else:
+		print("perdiste juas juas")
 	
 func you_win_game():
-	print("you win")	
-	pass
+	streak+=1
+	if streak > 5:
+		lifes+=1
+		streak = 0
+	_loadLevel()

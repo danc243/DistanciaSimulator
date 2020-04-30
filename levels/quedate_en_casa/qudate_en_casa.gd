@@ -10,10 +10,8 @@ func _input(event):
 		character.translate(Vector2(0, -(30)))
 
 func _on_AreaCharacter_area_entered(area):
-	emit_signal("you_lose")
-	
+	have_lost()
 
 func _timer_end():
-	emit_signal("you_win")
-	__disconnect()
+	have_won()
 	pass
