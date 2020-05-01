@@ -31,6 +31,8 @@ render_target_update_mode = 3
 physics_object_picking = true
 
 [node name="Lifes" type="HSplitContainer" parent="."]
+margin_left = 50.0
+margin_top = 20.0
 margin_right = 58.0
 margin_bottom = 14.0
 __meta__ = {
@@ -55,9 +57,9 @@ __meta__ = {
 }
 
 [node name="Streak" type="HSplitContainer" parent="."]
-anchor_left = 1.0
-anchor_right = 1.0
-margin_left = -49.0
+margin_left = 50.0
+margin_top = 40.0
+margin_right = 49.0
 margin_bottom = 14.0
 __meta__ = {
 "_edit_use_anchors_": false
@@ -67,16 +69,10 @@ __meta__ = {
 margin_right = 37.0
 margin_bottom = 14.0
 text = "Racha"
-__meta__ = {
-"_edit_lock_": true
-}
 
 [node name="StreakLabel" type="Label" parent="Streak"]
 margin_left = 49.0
 margin_right = 49.0
 margin_bottom = 14.0
-__meta__ = {
-"_edit_lock_": true
-}
 [connection signal="timer_gamer_out" from="WindowContainer/TimerGame" to="." method="_on_TimerGame_timer_gamer_out"]
 [connection signal="timer_gamer_start" from="WindowContainer/TimerGame" to="." method="_on_TimerGame_timer_gamer_start"]

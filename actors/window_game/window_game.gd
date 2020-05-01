@@ -11,7 +11,7 @@ var currentNode = null
 var main_menu_reference: MainMenu
 const cantidadDeMinijuegos: int = 3
 
-var lifes = 1
+var lifes = 5
 var streak = 0
 
 var _rng = RandomNumberGenerator.new()
@@ -23,7 +23,6 @@ func init(reference: MainMenu):
 	self.main_menu_reference = reference
 	connect("close_game", self.main_menu_reference, "close_the_game")
 
-
 func _ready():
 	_rng.randomize()
 	_updateLabels()
@@ -34,7 +33,6 @@ func _loadLevel():
 		viewport.remove_child(currentNode)
 		currentNode.queue_free()
 	var ran = _rng.randi_range(0, cantidadDeMinijuegos - 1)
-	ran = 0
 	var st: String = ""
 	match ran:
 		0:
@@ -47,7 +45,7 @@ func _loadLevel():
 	currentNode = load(st).instance() as MinigameLogic
 	currentNode.init(5, self)
 	viewport.add_child(currentNode)
-	timerGamer.initTimer(1) 
+	timerGamer.initTimer(10) 
 	pass
 
 
@@ -55,7 +53,6 @@ func you_lose_game():
 	lifes-=1
 	if lifes > 0:
 		_loadLevel()
-		life_label.text = String(lifes)
 		streak = 0
 		_updateLabels()
 	else:
