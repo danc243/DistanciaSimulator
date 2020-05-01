@@ -1,6 +1,5 @@
 extends MinigameLogic
 
-export var dificultad: int = 0
 var _buscado: int = 0
 var _cantidadDePersonas: int = 15
 var _tiposDePersonas: int = 3
