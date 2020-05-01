@@ -14,4 +14,3 @@ func _on_AreaCharacter_area_entered(area):
 
 func _timer_end():
 	have_won()
-	pass
