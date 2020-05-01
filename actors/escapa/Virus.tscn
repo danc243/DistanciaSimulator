@@ -1,0 +1,27 @@
+[gd_scene load_steps=5 format=2]
+
+[ext_resource path="res://actors/escapa/Virus.gd" type="Script" id=1]
+[ext_resource path="res://assets/escapa/covid_20.png" type="Texture" id=2]
+[ext_resource path="res://assets/intento/light.png" type="Texture" id=3]
+
+[sub_resource type="RectangleShape2D" id=1]
+extents = Vector2( 28.7157, 28.1896 )
+
+[node name="Virus" type="KinematicBody2D"]
+collision_mask = 8
+script = ExtResource( 1 )
+
+[node name="icon" type="Sprite" parent="."]
+texture = ExtResource( 2 )
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="."]
+visible = false
+modulate = Color( 0.607843, 0.862745, 0.0509804, 1 )
+shape = SubResource( 1 )
+
+[node name="Light2D" type="Light2D" parent="."]
+texture = ExtResource( 3 )
+texture_scale = 0.5
+color = Color( 0.384314, 0.180392, 0.4, 1 )
+energy = 1.02
+shadow_enabled = true

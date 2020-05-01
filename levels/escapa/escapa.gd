@@ -1,6 +1,6 @@
 extends MinigameLogic
 
-var ha_ganado = false
+var ha_perdido = false
 
 var _rng = RandomNumberGenerator.new()
 onready var Spawners = $CanvasModulate/Spawners
@@ -15,6 +15,7 @@ func _init() -> void:
 
 func _ready() -> void:
 	_spawnPlayer()
+	_spawnVirus()
 	pass
 
 func _spawnPlayer():
@@ -23,7 +24,21 @@ func _spawnPlayer():
 	player.position = spawns.position
 	add_child(player)
 
+func _spawnVirus():
+	var rngVirus = _playerSpawn
+	while(rngVirus==_playerSpawn):
+		rngVirus = _rng.randi_range(0,_numSpawns-1)
+
+	var spawns = Spawners.get_child(rngVirus)
+	var virus = preload("res://actors/escapa/Virus.tscn").instance()
+	virus.position = spawns.position
+	add_child(virus)
+
 func _process(delta):
-	if ha_ganado:
-		have_won()
-		ha_ganado = false
+	if ha_perdido:
+		have_lost()
+		ha_perdido = false
+
+func _timer_end():
+	have_won()
+	pass
