@@ -40,11 +40,8 @@ _global_script_classes=[ {
 "path": "res://actors/window_game/window_game.gd"
 } ]
 _global_script_class_icons={
-<<<<<<< HEAD
 "Actor": "",
-=======
 "MainMenu": "",
->>>>>>> 12f493b23662d1d0b924948670585a9a68cee05e
 "MinigameLogic": "",
 "QuedateEnCasaLevel": "",
 "TimerGamer": "",

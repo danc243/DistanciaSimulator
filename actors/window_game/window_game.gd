@@ -33,6 +33,7 @@ func _loadLevel():
 		viewport.remove_child(currentNode)
 		currentNode.queue_free()
 	var ran = _rng.randi_range(0, cantidadDeMinijuegos - 1)
+	ran = 3
 	var st: String = ""
 	match ran:
 		0:
@@ -41,6 +42,8 @@ func _loadLevel():
 			st = "/quickscope/TestLevel.tscn"
 		2:
 			st = "/se_busca/se_busca.tscn"
+		3: 
+			st = "/vuelve_a_casa/vuelve_a_casa.tscn"
 	st = str("res://levels", st)
 	currentNode = load(st).instance() as MinigameLogic
 	currentNode.init(5, self)
