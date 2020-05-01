@@ -9,10 +9,13 @@ onready var streak_label = $Streak/StreakLabel
 
 var currentNode = null
 var main_menu_reference: MainMenu
-const cantidadDeMinijuegos: int = 3
+const cantidadDeMinijuegos: int = 4
 
-var lifes = 5
+var lifes = 3
 var streak = 0
+
+var max_lifes = 5
+var max_streak = 5 
 
 var _rng = RandomNumberGenerator.new()
 
@@ -33,7 +36,7 @@ func _loadLevel():
 		viewport.remove_child(currentNode)
 		currentNode.queue_free()
 	var ran = _rng.randi_range(0, cantidadDeMinijuegos - 1)
-	ran = 3
+	ran  = 3
 	var st: String = ""
 	match ran:
 		0:
@@ -48,7 +51,7 @@ func _loadLevel():
 	currentNode = load(st).instance() as MinigameLogic
 	currentNode.init(5, self)
 	viewport.add_child(currentNode)
-	timerGamer.initTimer(10) 
+	timerGamer.initTimer(50) 
 	pass
 
 
@@ -63,8 +66,9 @@ func you_lose_game():
 		disconnect("close_game", self.main_menu_reference, "close_the_game")
 
 func you_win_game():
-	streak+=1
-	if streak > 5 && lifes < 5:
+	if streak < max_streak:
+		streak+=1
+	if streak >= max_streak && lifes < max_lifes:
 		lifes+=1
 		streak = 0
 	_updateLabels()
