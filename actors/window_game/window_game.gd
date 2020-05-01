@@ -36,7 +36,7 @@ func _loadLevel():
 		viewport.remove_child(currentNode)
 		currentNode.queue_free()
 	var ran = _rng.randi_range(0, cantidadDeMinijuegos - 1)
-	ran  = 3
+	#ran  = 3
 	var st: String = ""
 	match ran:
 		0:
