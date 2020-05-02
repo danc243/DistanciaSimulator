@@ -25,10 +25,10 @@ func _process(delta):
 		rect.color = newColor
 
 func initTimer(wait_time: float):
-	timer.wait_time = wait_time
-	_initialTime  = wait_time
 	if !timer.is_stopped():
 		timer.stop()
+	timer.wait_time = wait_time
+	_initialTime  = wait_time
 	timer.start()
 	emit_signal("timer_gamer_start")
 	pass
