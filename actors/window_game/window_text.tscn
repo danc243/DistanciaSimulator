@@ -1,0 +1,45 @@
+[gd_scene load_steps=2 format=2]
+
+[ext_resource path="res://actors/window_game/window_text.gd" type="Script" id=1]
+
+[node name="WindowText" type="Control"]
+margin_left = 120.0
+margin_top = 45.0
+margin_right = 920.0
+margin_bottom = 675.0
+script = ExtResource( 1 )
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="ColorRect" type="ColorRect" parent="."]
+anchor_right = 1.0
+anchor_bottom = 1.0
+margin_top = 30.0
+margin_right = -6.10352e-05
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="TxtLabel" type="RichTextLabel" parent="ColorRect"]
+anchor_right = 1.0
+anchor_bottom = 1.0
+custom_colors/default_color = Color( 0, 0, 0, 1 )
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="bar" type="ColorRect" parent="."]
+margin_right = 800.0
+margin_bottom = 30.0
+color = Color( 0.623529, 0.65098, 0.721569, 1 )
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="CloseTXTButton" type="Button" parent="bar"]
+anchor_left = 1.0
+anchor_right = 1.0
+margin_left = -30.0
+margin_bottom = 30.0
+[connection signal="pressed" from="bar/CloseTXTButton" to="." method="_on_CloseTXTButton_pressed"]

@@ -10,7 +10,7 @@ onready var _victoryTimer = $Timer
 
 var _cantidadInputs: int = 5
 
-signal show_txt
+
 
 func _ready() -> void:
 	
@@ -54,9 +54,9 @@ func _goodOrBadInput(i: int):
 		return
 	
 	if(_inputActual==_cantidadInputs):
-		connect("show_txt", _window_game, "_on_show_txt")
+		connect("show_txt", _window_game, "_on_show_bee_movie_txt")
 		emit_signal("show_txt")
-		disconnect("show_txt", _window_game, "_on_show_txt")
+		disconnect("show_txt", _window_game, "_on_show_bee_movie_txt")
 		var savegame = get_node("/root/SaveGame")
 		_LucasState += 1
 		savegame.set_george_lucas_state(_LucasState)

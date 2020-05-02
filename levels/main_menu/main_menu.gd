@@ -2,11 +2,14 @@ extends Control
 
 class_name MainMenu
 
-onready var messageButton = $buttons/Mensaje
+onready var messageButton = $"buttons/Mensaje Bee Movie"
 onready var buttons = $buttons
 onready var nodeHandler = $handler
 onready var laPrecuelaBeeMovieHandler = $LaPrecuelaBeeMovie
 onready var txtLabel = $LaPrecuelaBeeMovie/ColorRect/TxtLabel
+
+onready var se_busca_txt = $"Se Busca"
+
 var window_game = null
 
 
@@ -47,16 +50,26 @@ func _setButtons(mouseFilter):
 			child.mouse_filter = mouseFilter
 
 
-
 func _on_Mensaje_on_pressed_button():
 	laPrecuelaBeeMovieHandler.visible = true
 	_setButtons(MOUSE_FILTER_IGNORE)
-	var f = File.new()
-	f.open("res://assets/george_lucas/La_Precuela_Perdida.txt", File.READ)
-	txtLabel.text = f.get_as_text()
-	f.close()
+	if laPrecuelaBeeMovieHandler.txt.text.empty():
+		var f = File.new()
+		f.open("res://assets/george_lucas/La_Precuela_Perdida.txt", File.READ)
+		txtLabel.text = f.get_as_text()
+		f.close()
 
-func _on_CloseTXTButton_pressed():
+
+func _on_LaPrecuelaBeeMovie_close_window():
 	laPrecuelaBeeMovieHandler.visible = false
-	txtLabel.text = ""
 	_setButtons(MOUSE_FILTER_STOP)
+
+func _on_Se_Busca_on_pressed_button():
+	_setButtons(MOUSE_FILTER_IGNORE)
+	se_busca_txt.visible = true
+
+func _on_Se_Busca_close_window():
+	_setButtons(MOUSE_FILTER_STOP)
+	se_busca_txt.visible = false
+
+

@@ -1,4 +1,4 @@
-[gd_scene load_steps=9 format=2]
+[gd_scene load_steps=10 format=2]
 
 [ext_resource path="res://levels/main_menu/desktop_icon/desktop_icon.tscn" type="PackedScene" id=1]
 [ext_resource path="res://assets/34778.jpg" type="Texture" id=2]
@@ -6,6 +6,7 @@
 [ext_resource path="res://levels/main_menu/main_menu.gd" type="Script" id=4]
 [ext_resource path="res://assets/txt.png" type="Texture" id=5]
 [ext_resource path="res://assets/icono_game.png" type="Texture" id=6]
+[ext_resource path="res://actors/window_game/window_text.tscn" type="PackedScene" id=7]
 
 [sub_resource type="Shader" id=1]
 code = "shader_type canvas_item;
@@ -88,7 +89,7 @@ __meta__ = {
 "_edit_use_anchors_": false
 }
 
-[node name="Mensaje" parent="buttons" instance=ExtResource( 1 )]
+[node name="Mensaje Bee Movie" parent="buttons" instance=ExtResource( 1 )]
 anchor_right = 0.0
 anchor_bottom = 0.0
 margin_left = 80.1523
@@ -99,7 +100,7 @@ icon = ExtResource( 5 )
 flat = true
 expand_icon = true
 
-[node name="Game Icon" parent="buttons" instance=ExtResource( 3 )]
+[node name="Covid 20 Electric Boogaloo" parent="buttons" instance=ExtResource( 3 )]
 anchor_right = 0.0
 anchor_bottom = 0.0
 margin_left = 195.445
@@ -112,9 +113,21 @@ button_mask = 3
 enabled_focus_mode = 0
 icon = ExtResource( 6 )
 
+[node name="Se Busca" parent="buttons" instance=ExtResource( 1 )]
+anchor_right = 0.0
+anchor_bottom = 0.0
+margin_left = 80.0
+margin_top = 360.0
+margin_right = 144.0
+margin_bottom = 424.0
+icon = ExtResource( 5 )
+flat = true
+expand_icon = true
+
 [node name="handler" type="Control" parent="."]
+anchor_top = -0.00153893
 anchor_right = 1.0
-anchor_bottom = 1.0
+anchor_bottom = 0.998461
 margin_left = 225.0
 margin_top = 44.0
 margin_right = 225.0
@@ -186,43 +199,13 @@ __meta__ = {
 "_edit_use_anchors_": false
 }
 
-[node name="LaPrecuelaBeeMovie" type="Control" parent="."]
+[node name="LaPrecuelaBeeMovie" parent="." instance=ExtResource( 7 )]
 visible = false
-margin_left = 120.0
-margin_top = 45.0
-margin_right = 920.0
-margin_bottom = 675.0
-__meta__ = {
-"_edit_use_anchors_": false
-}
 
-[node name="ColorRect" type="ColorRect" parent="LaPrecuelaBeeMovie"]
-anchor_right = 1.0
-anchor_bottom = 1.0
-margin_top = 30.0
-margin_right = -6.10352e-05
-__meta__ = {
-"_edit_use_anchors_": false
-}
-
-[node name="TxtLabel" type="RichTextLabel" parent="LaPrecuelaBeeMovie/ColorRect"]
-anchor_right = 1.0
-anchor_bottom = 1.0
-custom_colors/default_color = Color( 0, 0, 0, 1 )
-
-[node name="bar" type="ColorRect" parent="LaPrecuelaBeeMovie"]
-margin_right = 800.0
-margin_bottom = 30.0
-color = Color( 0.623529, 0.65098, 0.721569, 1 )
-__meta__ = {
-"_edit_use_anchors_": false
-}
-
-[node name="CloseTXTButton" type="Button" parent="LaPrecuelaBeeMovie/bar"]
-anchor_left = 1.0
-anchor_right = 1.0
-margin_left = -30.0
-margin_bottom = 30.0
-[connection signal="on_pressed_button" from="buttons/Mensaje" to="." method="_on_Mensaje_on_pressed_button"]
-[connection signal="on_pressed_button" from="buttons/Game Icon" to="." method="_on_Game_Icon_on_pressed_button"]
-[connection signal="pressed" from="LaPrecuelaBeeMovie/bar/CloseTXTButton" to="." method="_on_CloseTXTButton_pressed"]
+[node name="Se Busca" parent="." instance=ExtResource( 7 )]
+visible = false
+[connection signal="on_pressed_button" from="buttons/Mensaje Bee Movie" to="." method="_on_Mensaje_on_pressed_button"]
+[connection signal="on_pressed_button" from="buttons/Covid 20 Electric Boogaloo" to="." method="_on_Game_Icon_on_pressed_button"]
+[connection signal="on_pressed_button" from="buttons/Se Busca" to="." method="_on_Se_Busca_on_pressed_button"]
+[connection signal="close_window" from="LaPrecuelaBeeMovie" to="." method="_on_LaPrecuelaBeeMovie_close_window"]
+[connection signal="close_window" from="Se Busca" to="." method="_on_Se_Busca_close_window"]

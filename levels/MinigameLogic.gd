@@ -4,6 +4,7 @@ class_name MinigameLogic
 
 signal you_lose
 signal you_win
+signal show_txt
 
 var difficulty
 var _window_game: Object
