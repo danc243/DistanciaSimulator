@@ -51,6 +51,7 @@ __meta__ = {
 }
 
 [node name="TimerGame" parent="WindowContainer" instance=ExtResource( 2 )]
+modulate = Color( 1, 1, 1, 0.384314 )
 mouse_filter = 2
 
 [node name="Viewport" type="Viewport" parent="WindowContainer"]

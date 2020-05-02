@@ -5,11 +5,16 @@ var _inputsArray = [] #from 0 to 3
 var _rng = RandomNumberGenerator.new()
 var _inputActual = 0
 var _stillPlaying = true
+var _LucasState
 onready var _victoryTimer = $Timer
 
 var _cantidadInputs: int = 5
 
+
 func _ready() -> void:
+	
+	var savegame = get_node("/root/SaveGame")
+	_LucasState = savegame.get_george_lucas_state()
 	
 	_rng.randomize()
 	
@@ -48,6 +53,10 @@ func _goodOrBadInput(i: int):
 		return
 	
 	if(_inputActual==_cantidadInputs):
+		var savegame = get_node("/root/SaveGame")
+		_LucasState += 1
+		savegame.set_george_lucas_state(_LucasState)
+		
 		_stillPlaying = false
 		var timerleft = _window_game.timerGamer.timer.time_left
 		if(timerleft<5.0):

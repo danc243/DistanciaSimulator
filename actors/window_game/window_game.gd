@@ -9,7 +9,7 @@ onready var streak_label = $Streak/StreakLabel
 
 var currentNode = null
 var main_menu_reference: MainMenu
-const cantidadDeMinijuegos: int = 5
+const cantidadDeMinijuegos: int = 6
 
 var lifes = 50
 var streak = 0
