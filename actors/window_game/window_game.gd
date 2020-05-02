@@ -11,7 +11,7 @@ var currentNode = null
 var main_menu_reference: MainMenu
 const cantidadDeMinijuegos: int = 5
 
-var lifes = 3
+var lifes = 50
 var streak = 0
 
 var max_lifes = 5
