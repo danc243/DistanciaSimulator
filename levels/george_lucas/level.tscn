@@ -12,6 +12,11 @@ __meta__ = {
 "_edit_vertical_guides_": [ 800.0 ]
 }
 
+[node name="cursed" type="Sprite" parent="."]
+position = Vector2( 400, 300 )
+scale = Vector2( 1.3245, 1.76471 )
+texture = ExtResource( 2 )
+
 [node name="Control" type="Control" parent="."]
 anchor_right = 1.0
 anchor_bottom = 1.0
@@ -41,7 +46,6 @@ __meta__ = {
 "_edit_use_anchors_": false
 }
 
-[node name="cursed" type="Sprite" parent="."]
-position = Vector2( 400, 300 )
-scale = Vector2( 1.3245, 1.76471 )
-texture = ExtResource( 2 )
+[node name="Timer" type="Timer" parent="."]
+wait_time = 5.0
+[connection signal="timeout" from="Timer" to="." method="_on_Timer_timeout"]

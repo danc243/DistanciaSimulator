@@ -51,7 +51,7 @@ func _loadLevel():
 		4: 
 			st = "/escapa/escapa.tscn"
 		5:
-			st = "/george_lucas/leve.tscn"
+			st = "/george_lucas/level.tscn"
 	
 	st = str("res://levels", st)
 	currentNode = load(st).instance() as MinigameLogic
