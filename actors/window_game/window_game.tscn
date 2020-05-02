@@ -104,5 +104,6 @@ text = "Racha"
 margin_left = 49.0
 margin_right = 49.0
 margin_bottom = 14.0
+[connection signal="pressed" from="Bar/CloseGame" to="." method="_on_CloseGame_pressed"]
 [connection signal="timer_gamer_out" from="WindowContainer/TimerGame" to="." method="_on_TimerGame_timer_gamer_out"]
 [connection signal="timer_gamer_start" from="WindowContainer/TimerGame" to="." method="_on_TimerGame_timer_gamer_start"]

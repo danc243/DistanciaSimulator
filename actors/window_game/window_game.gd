@@ -89,3 +89,8 @@ func _on_TimerGame_timer_gamer_out():
 
 func _on_TimerGame_timer_gamer_start():
 	pass 
+
+
+func _on_CloseGame_pressed():
+	emit_signal("close_game")
+	disconnect("close_game", self.main_menu_reference, "close_the_game")

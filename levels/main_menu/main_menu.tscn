@@ -106,10 +106,12 @@ shortcut_in_tooltip = false
 enabled_focus_mode = 0
 
 [node name="handler" type="Control" parent="."]
-margin_left = 240.0
-margin_top = 60.0
-margin_right = 240.0
-margin_bottom = 60.0
+anchor_right = 1.0
+anchor_bottom = 1.0
+margin_left = 225.0
+margin_top = 44.0
+margin_right = 225.0
+margin_bottom = 44.0
 mouse_filter = 2
 __meta__ = {
 "_edit_use_anchors_": false
@@ -126,6 +128,7 @@ mouse_filter = 2
 texture = ExtResource( 2 )
 expand = true
 __meta__ = {
+"_edit_lock_": true,
 "_edit_use_anchors_": false
 }
 
@@ -134,6 +137,7 @@ anchor_right = 1.0
 anchor_bottom = 1.0
 mouse_filter = 2
 __meta__ = {
+"_edit_lock_": true,
 "_edit_use_anchors_": false
 }
 
