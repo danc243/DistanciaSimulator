@@ -73,6 +73,5 @@ func _timer_end():
 	else:
 		have_won()
 
-
 func _on_Timer_timeout() -> void:
 	_window_game.timerGamer.timer.paused = false

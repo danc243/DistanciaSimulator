@@ -154,4 +154,7 @@ func _on_show_bee_movie_txt():
 
 func _on_show_se_busca_txt():
 	main_menu_reference.se_busca_button.visible = true
+	
+func _on_show_quickes_copes():
+	main_menu_reference.quickes_copes_button.visible = true
 

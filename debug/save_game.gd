@@ -16,6 +16,7 @@ var load_response = config.load(_save_path)
 var _key_george_lucas_state = "_key_george_lucas_state"
 var _key_first_time_playing = "_key_first_time_playing"
 var _key_se_busca  = "_key_se_busca"
+var _key_quick_scopes = "_key_quick_scopes"
 
 """
 Secciones de Guardado
@@ -43,3 +44,10 @@ func set_se_busca_state(state: bool):
 
 func get_se_busca_state():
 	return config.get_value(_section_principal, _key_se_busca, false)
+	
+
+func get_quick_scopes():
+	return config.get_value(_section_principal, _key_quick_scopes, false)
+
+func set_quick_scopes(state: bool):
+	config.set_value(_section_principal, _key_first_time_playing, state)

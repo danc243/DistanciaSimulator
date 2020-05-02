@@ -11,13 +11,16 @@ onready var txtLabel = $LaPrecuelaBeeMovie/ColorRect/TxtLabel
 onready var se_busca_button = $"buttons/Se Busca"
 onready var se_busca_txt = $"Se Busca"
 
-var window_game = null
+onready var quickes_copes_txt = $QuickesCopes
+onready var quickes_copes_button =$"buttons/Qüickes Copes"
 
+var window_game = null
 
 func _ready():
 	var savegame = get_node("/root/SaveGame")
 	bee_movie_button.visible = savegame.get_george_lucas_state() > 0
 	se_busca_button.visible = savegame.get_se_busca_state()
+	quickes_copes_button.visible = savegame.get_quick_scopes()
 
 func _on_Game_Icon_on_pressed_button():
 	if nodeHandler.get_child_count() > 0:
@@ -68,3 +71,14 @@ func _on_Se_Busca_on_pressed_button():
 func _on_Se_Busca_close_window():
 	_setButtons(MOUSE_FILTER_STOP)
 	se_busca_txt.visible = false
+
+
+func _on_QuickesCopes_close_window():
+	_setButtons(MOUSE_FILTER_STOP)
+	quickes_copes_txt.visible = false
+	pass
+
+func _on_Qickes_Copes_on_pressed_button():
+	quickes_copes_txt.visible = true
+	_setButtons(MOUSE_FILTER_IGNORE)
+	pass 
