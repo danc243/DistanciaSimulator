@@ -54,6 +54,10 @@ config/name="Distancia Simulator"
 run/main_scene="res://levels/main_menu/main_menu.tscn"
 config/icon="res://icon.png"
 
+[autoload]
+
+SaveGame="*res://debug/save_game.gd"
+
 [display]
 
 window/size/width=1280

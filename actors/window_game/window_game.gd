@@ -30,6 +30,7 @@ func _ready():
 	_rng.randomize()
 	_updateLabels()
 	_loadLevel()
+	
 
 func _loadLevel():
 	if(currentNode!=null):
@@ -54,7 +55,9 @@ func _loadLevel():
 	currentNode = load(st).instance() as MinigameLogic
 	currentNode.init(5, self)
 	viewport.add_child(currentNode)
-	timerGamer.initTimer(50) 
+	timerGamer.initTimer(10)
+	var savegame = get_node("/root/SaveGame")
+
 	pass
 
 
