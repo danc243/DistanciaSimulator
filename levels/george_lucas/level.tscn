@@ -1,0 +1,47 @@
+[gd_scene load_steps=4 format=2]
+
+[ext_resource path="res://levels/george_lucas/level.gd" type="Script" id=1]
+[ext_resource path="res://assets/quickscope/cursed.jpg" type="Texture" id=2]
+
+[sub_resource type="StyleBoxEmpty" id=1]
+
+[node name="Node" type="Node"]
+script = ExtResource( 1 )
+__meta__ = {
+"_edit_horizontal_guides_": [ 600.0 ],
+"_edit_vertical_guides_": [ 800.0 ]
+}
+
+[node name="Control" type="Control" parent="."]
+anchor_right = 1.0
+anchor_bottom = 1.0
+margin_top = 150.0
+margin_bottom = -506.0
+mouse_filter = 2
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="ItemList" type="ItemList" parent="Control"]
+anchor_right = 1.0
+anchor_bottom = 1.0
+margin_left = 640.0
+margin_right = -640.0
+grow_horizontal = 2
+custom_styles/bg = SubResource( 1 )
+custom_constants/vseparation = 0
+custom_constants/line_separation = 0
+custom_constants/icon_margin = 0
+custom_constants/hseparation = 0
+auto_height = true
+max_columns = 0
+fixed_column_width = 64
+icon_mode = 0
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="cursed" type="Sprite" parent="."]
+position = Vector2( 400, 300 )
+scale = Vector2( 1.3245, 1.76471 )
+texture = ExtResource( 2 )
