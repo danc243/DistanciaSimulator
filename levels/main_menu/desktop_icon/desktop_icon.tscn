@@ -4,10 +4,10 @@
 [ext_resource path="res://levels/main_menu/desktop_icon/desktop_icon.gd" type="Script" id=2]
 
 [node name="Desktop Icon" type="Button"]
-anchor_right = 0.095
+anchor_right = 0.059
 anchor_bottom = 0.117
-margin_right = -7.62939e-06
-margin_bottom = -0.200005
+margin_right = 0.479996
+margin_bottom = -0.239998
 icon = ExtResource( 1 )
 script = ExtResource( 2 )
 __meta__ = {
