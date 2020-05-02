@@ -27,6 +27,8 @@ func _process(delta):
 func initTimer(wait_time: float):
 	timer.wait_time = wait_time
 	_initialTime  = wait_time
+	if !timer.is_stopped():
+		timer.stop()
 	timer.start()
 	emit_signal("timer_gamer_start")
 	pass

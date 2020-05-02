@@ -18,6 +18,11 @@ func _ready() -> void:
 	
 	itemlist.rect_min_size = Vector2(_cantidadInputs*68,itemlist.rect_size.y)
 	
+	
+func init(difficulty: int, referenceParent: Object):
+	.init(difficulty, referenceParent)
+	referenceParent.timerGamer.initTimer(3)
+	pass
 
 func _input(event: InputEvent) -> void:
 	if(!_stillPlaying):

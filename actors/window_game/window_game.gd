@@ -37,7 +37,7 @@ func _loadLevel():
 		viewport.remove_child(currentNode)
 		currentNode.queue_free()
 	var ran = _rng.randi_range(0, cantidadDeMinijuegos - 1)
-	#ran = 5
+	ran = 5
 	var st: String = ""
 	match ran:
 		0:
@@ -50,15 +50,14 @@ func _loadLevel():
 			st = "/vuelve_a_casa/vuelve_a_casa.tscn"
 		4: 
 			st = "/escapa/escapa.tscn"
+		5:
+			st = "/george_lucas/leve.tscn"
 	
 	st = str("res://levels", st)
 	currentNode = load(st).instance() as MinigameLogic
 	currentNode.init(5, self)
 	viewport.add_child(currentNode)
 	timerGamer.initTimer(10)
-	var savegame = get_node("/root/SaveGame")
-
-	pass
 
 
 func you_lose_game():
