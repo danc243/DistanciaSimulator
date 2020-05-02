@@ -149,3 +149,5 @@ func _on_CloseGame_pressed():
 	emit_signal("close_game")
 	disconnect("close_game", self.main_menu_reference, "close_the_game")
 
+func _on_show_txt():
+	main_menu_reference.messageButton.visible = true

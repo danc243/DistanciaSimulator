@@ -41,4 +41,3 @@ func __connect():
 	connect("you_lose", _window_game, "you_lose_game")
 # warning-ignore:return_value_discarded
 	_window_game.connect("timerEndsParent", self, "_timer_end")
-
