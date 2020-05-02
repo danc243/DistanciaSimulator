@@ -183,7 +183,7 @@ __meta__ = {
 "_edit_use_anchors_": false
 }
 
-[node name="TxtHandler" type="Control" parent="."]
+[node name="LaPrecuelaBeeMovie" type="Control" parent="."]
 visible = false
 margin_left = 120.0
 margin_top = 45.0
@@ -193,7 +193,7 @@ __meta__ = {
 "_edit_use_anchors_": false
 }
 
-[node name="ColorRect" type="ColorRect" parent="TxtHandler"]
+[node name="ColorRect" type="ColorRect" parent="LaPrecuelaBeeMovie"]
 anchor_right = 1.0
 anchor_bottom = 1.0
 margin_top = 30.0
@@ -202,12 +202,12 @@ __meta__ = {
 "_edit_use_anchors_": false
 }
 
-[node name="TxtLabel" type="RichTextLabel" parent="TxtHandler/ColorRect"]
+[node name="TxtLabel" type="RichTextLabel" parent="LaPrecuelaBeeMovie/ColorRect"]
 anchor_right = 1.0
 anchor_bottom = 1.0
 custom_colors/default_color = Color( 0, 0, 0, 1 )
 
-[node name="bar" type="ColorRect" parent="TxtHandler"]
+[node name="bar" type="ColorRect" parent="LaPrecuelaBeeMovie"]
 margin_right = 800.0
 margin_bottom = 30.0
 color = Color( 0.623529, 0.65098, 0.721569, 1 )
@@ -215,11 +215,11 @@ __meta__ = {
 "_edit_use_anchors_": false
 }
 
-[node name="CloseTXTButton" type="Button" parent="TxtHandler/bar"]
+[node name="CloseTXTButton" type="Button" parent="LaPrecuelaBeeMovie/bar"]
 anchor_left = 1.0
 anchor_right = 1.0
 margin_left = -30.0
 margin_bottom = 30.0
 [connection signal="on_pressed_button" from="buttons/Mensaje" to="." method="_on_Mensaje_on_pressed_button"]
 [connection signal="on_pressed_button" from="buttons/Game Icon" to="." method="_on_Game_Icon_on_pressed_button"]
-[connection signal="pressed" from="TxtHandler/bar/CloseTXTButton" to="." method="_on_CloseTXTButton_pressed"]
+[connection signal="pressed" from="LaPrecuelaBeeMovie/bar/CloseTXTButton" to="." method="_on_CloseTXTButton_pressed"]
