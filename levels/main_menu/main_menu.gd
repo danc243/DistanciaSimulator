@@ -6,6 +6,7 @@ onready var messageButton = $buttons/Mensaje
 onready var buttons = $buttons
 onready var nodeHandler = $handler
 onready var txtHandler = $TxtHandler
+onready var txtLabel = $TxtHandler/ColorRect/TxtLabel
 var window_game = null
 
 
@@ -50,7 +51,14 @@ func _setButtons(mouseFilter):
 func _on_Mensaje_on_pressed_button():
 	txtHandler.visible = true
 	_setButtons(MOUSE_FILTER_IGNORE)
+	var f = File.new()
+	f.open("res://assets/george_lucas/La_Precuela_Perdida.txt", File.READ)
+	txtLabel.text = f.get_as_text()
+	f.close()
+	
+
 
 func _on_CloseTXTButton_pressed():
 	txtHandler.visible = false
+	txtLabel.text = ""
 	_setButtons(MOUSE_FILTER_STOP)

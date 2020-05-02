@@ -202,14 +202,10 @@ __meta__ = {
 "_edit_use_anchors_": false
 }
 
-[node name="Label" type="Label" parent="TxtHandler/ColorRect"]
+[node name="TxtLabel" type="RichTextLabel" parent="TxtHandler/ColorRect"]
 anchor_right = 1.0
 anchor_bottom = 1.0
-custom_colors/font_color = Color( 0, 0, 0, 1 )
-text = "flkmdslkfmsdlkfmlksk"
-__meta__ = {
-"_edit_use_anchors_": false
-}
+custom_colors/default_color = Color( 0, 0, 0, 1 )
 
 [node name="bar" type="ColorRect" parent="TxtHandler"]
 margin_right = 800.0
