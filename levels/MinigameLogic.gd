@@ -42,8 +42,3 @@ func __connect():
 # warning-ignore:return_value_discarded
 	_window_game.connect("timerEndsParent", self, "_timer_end")
 
-#func emit_signal_you_win():
-#	pass
-#
-#func emit_signal_you_win():
-#	pass

@@ -17,27 +17,54 @@ var streak = 0
 var max_lifes = 5
 var max_streak = 5 
 
+var _dificultad = 1
+var _lastGame = 0
+var _timer = 15
+var _minijuegosGanados = 0
+
 var _rng = RandomNumberGenerator.new()
 
 signal timerEndsParent
 signal close_game
 
 func init(reference: MainMenu):
+	
 	self.main_menu_reference = reference
 	connect("close_game", self.main_menu_reference, "close_the_game")
 
+
 func _ready():
 	_rng.randomize()
+	
+	var savegame = get_node("/root/SaveGame")
+	var state = savegame.get_first_time_playing()
+	
+	if(state):
+		_dificultad = 0
+		_timer = 20
+	
 	_updateLabels()
 	_loadLevel()
-	
+
 
 func _loadLevel():
+	
+	_calDificultad()
+	
 	if(currentNode!=null):
 		viewport.remove_child(currentNode)
 		currentNode.queue_free()
-	var ran = _rng.randi_range(0, cantidadDeMinijuegos - 1)
-#	ran = 5
+	
+	var ran = _lastGame
+	
+	if(_dificultad>0):
+		while(ran==_lastGame):
+			ran = _rng.randi_range(0, cantidadDeMinijuegos - 1)
+	else:
+		ran = _minijuegosGanados
+		pass
+
+	
 	var st: String = ""
 	match ran:
 		0:
@@ -55,7 +82,7 @@ func _loadLevel():
 	
 	st = str("res://levels", st)
 	currentNode = load(st).instance() as MinigameLogic
-	currentNode.init(5, self)
+	currentNode.init(_dificultad, self)
 	viewport.add_child(currentNode)
 	timerGamer.initTimer(10)
 
@@ -70,21 +97,49 @@ func you_lose_game():
 		emit_signal("close_game")
 		disconnect("close_game", self.main_menu_reference, "close_the_game")
 
+
 func you_win_game():
 	if streak < max_streak:
 		streak+=1
 	if streak >= max_streak && lifes < max_lifes:
 		lifes+=1
 		streak = 0
+	_minijuegosGanados += 1
 	_updateLabels()
 	_loadLevel()
-	
+
+
 func _updateLabels():
 	life_label.text = String(lifes)
 	streak_label.text = String(streak)
 
+
+func _calDificultad():
+	
+	match _dificultad:
+		0:
+			if(_minijuegosGanados == cantidadDeMinijuegos ):
+				_dificultad=1
+				_timer = 10
+				var savegame = get_node("/root/SaveGame")
+				savegame.set_first_time_playing(false)
+		1:
+			if(_minijuegosGanados > 3):
+				_dificultad=2
+				_timer = 8
+			pass
+		2:
+			if(_minijuegosGanados > 8):
+				_dificultad=3
+				_timer = 5
+			pass
+
+	pass
+
+
 func _on_TimerGame_timer_gamer_out():
 	emit_signal("timerEndsParent")
+
 
 func _on_TimerGame_timer_gamer_start():
 	pass 
@@ -93,3 +148,4 @@ func _on_TimerGame_timer_gamer_start():
 func _on_CloseGame_pressed():
 	emit_signal("close_game")
 	disconnect("close_game", self.main_menu_reference, "close_the_game")
+

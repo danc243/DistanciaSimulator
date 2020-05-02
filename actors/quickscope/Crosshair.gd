@@ -19,6 +19,7 @@ func _input(event: InputEvent) -> void:
 		
 		for si in oye:
 			si.queue_free()
+			find_parent("TestLevel").enemy_killed()
 		
 		# If you are here, play sound
 		# Also show hitmark for x amout of seconds and quickscore animation
