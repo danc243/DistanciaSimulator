@@ -150,5 +150,8 @@ func _on_CloseGame_pressed():
 	disconnect("close_game", self.main_menu_reference, "close_the_game")
 
 func _on_show_bee_movie_txt():
-	main_menu_reference.messageButton.visible = true
-	
+	main_menu_reference.bee_movie_button.visible = true
+
+func _on_show_se_busca_txt():
+	main_menu_reference.se_busca_button.visible = true
+

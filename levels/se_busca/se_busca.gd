@@ -50,3 +50,13 @@ func _spawnPerson(quePersona: int, esElBuscado: bool, pos: Vector2, elNivel, spa
 func _timer_start():
 	._timer_start()
 	pass
+	
+func have_won():
+	if difficulty >= 3:
+		var savegame = get_node("/root/SaveGame")
+		savegame.set_se_busca_state(true)
+		connect("show_txt", _window_game, "_on_show_se_busca_txt")
+		emit_signal("show_txt")
+		disconnect("show_txt", _window_game, "_on_show_se_busca_txt")
+	.have_won()
+	pass

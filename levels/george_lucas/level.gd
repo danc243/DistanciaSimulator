@@ -22,7 +22,6 @@ func _ready() -> void:
 	for i in _cantidadInputs:
 		_inputsArray.append(_rng.randi_range(0,3))
 		itemlist.add_icon_item(load(str("res://assets/george_lucas/",_inputsArray[i],".png")),false)
-	
 	itemlist.rect_min_size = Vector2(_cantidadInputs*68,itemlist.rect_size.y)
 
 
@@ -52,7 +51,6 @@ func _goodOrBadInput(i: int):
 	else:
 		have_lost()
 		return
-	
 	if(_inputActual==_cantidadInputs):
 		connect("show_txt", _window_game, "_on_show_bee_movie_txt")
 		emit_signal("show_txt")
