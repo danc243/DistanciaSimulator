@@ -9,19 +9,19 @@ onready var laPrecuelaBeeMovieHandler = $LaPrecuelaBeeMovie
 onready var txtLabel = $LaPrecuelaBeeMovie/ColorRect/TxtLabel
 
 onready var se_busca_button = $"buttons/Se Busca"
-onready var se_busca_txt = $"Se Busca"
+onready var se_busca_txt: WindowText = $"Se Busca"
 
-onready var quickes_copes_txt = $QuickesCopes
+onready var quickes_copes_txt: WindowText = $QuickesCopes
 onready var quickes_copes_button =$"buttons/Qüickes Copes"
 
 onready var vuelve_casa_button = $"buttons/Vuelve a casa"
-onready var vuelve_casa_txt = $"Vuelve a casa"
+onready var vuelve_casa_txt: WindowText = $"Vuelve a casa"
 
 onready var quedate_en_casa_button =$"buttons/Quédate en Casa"
-onready var quedate_en_casa_txt =$"Quedate en Casa Text"
+onready var quedate_en_casa_txt: WindowText =$"Quedate en Casa Text"
 
 onready var escapa_button = $buttons/Escapa
-onready var escapa_text = $"Escapa Text"
+onready var escapa_text: WindowText = $"Escapa Text"
 
 var window_game = null
 
@@ -92,14 +92,25 @@ func _on_Se_Busca_close_window():
 func _on_QuickesCopes_close_window():
 	_setButtons(MOUSE_FILTER_STOP)
 	quickes_copes_txt.visible = false
+	
 
 func _on_Qickes_Copes_on_pressed_button():
 	quickes_copes_txt.visible = true
 	_setButtons(MOUSE_FILTER_IGNORE)
+	if quickes_copes_txt.txt.text.empty():
+		var f = File.new()
+		f.open("res://levels/quickscope/Quickscopes.txt", File.READ)
+		quickes_copes_txt.txt.text = f.get_as_text()
+		f.close()
 
 func _on_Vuelve_a_casa_on_pressed_button():
 	_setButtons(MOUSE_FILTER_IGNORE)
 	vuelve_casa_txt.visible = true
+	if vuelve_casa_txt.txt.text.empty():
+		var f = File.new()
+		f.open("res://levels/vuelve_a_casa/vuelve_a_casa.txt", File.READ)
+		vuelve_casa_txt.txt.text = f.get_as_text()
+		f.close()
 
 func _on_Vuelve_a_casa_close_window():
 	_setButtons(MOUSE_FILTER_STOP)
@@ -108,6 +119,11 @@ func _on_Vuelve_a_casa_close_window():
 func _on_Qudate_en_Casa_on_pressed_button():
 	_setButtons(MOUSE_FILTER_IGNORE)
 	quedate_en_casa_txt.visible = true
+	if quedate_en_casa_txt.txt.text.empty():
+		var f = File.new()
+		f.open("res://levels/quedate_en_casa/quedate_en_casa.txt", File.READ)
+		quedate_en_casa_txt.txt.text = f.get_as_text()
+		f.close()
 
 func _on_Quedate_en_Casa_Text_close_window():
 	_setButtons(MOUSE_FILTER_STOP)
@@ -116,6 +132,11 @@ func _on_Quedate_en_Casa_Text_close_window():
 func _on_Escapa_on_pressed_button():
 	_setButtons(MOUSE_FILTER_IGNORE)
 	escapa_text.visible = true
+	if escapa_text.txt.text.empty():
+		var f = File.new()
+		f.open("res://levels/escapa/escapa.txt", File.READ)
+		escapa_text.txt.text = f.get_as_text()
+		f.close()
 
 func _on_Escapa_Text_close_window():
 	_setButtons(MOUSE_FILTER_STOP)

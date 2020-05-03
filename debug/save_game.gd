@@ -71,7 +71,7 @@ func get_quedate_en_casa():
 
 func set_escapa(state: bool):
 	config.set_value(_section_principal, _key_escapa, state)
-	config.save
+	config.save(_save_path)
 
 func get_escapa():
 	return config.get_value(_section_principal, _key_escapa, false)

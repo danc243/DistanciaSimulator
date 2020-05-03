@@ -145,6 +145,7 @@ margin_bottom = 215.76
 icon = ExtResource( 5 )
 flat = true
 expand_icon = true
+icon_name = "Diario de Centinela"
 
 [node name="Quédate en Casa" parent="buttons" instance=ExtResource( 1 )]
 margin_left = 180.0
