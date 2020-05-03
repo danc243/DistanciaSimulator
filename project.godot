@@ -51,7 +51,7 @@ _global_script_class_icons={
 [application]
 
 config/name="Distancia Simulator"
-run/main_scene="res://levels/main_menu/main_menu.tscn"
+run/main_scene="res://levels/Intro/Intro.tscn"
 config/icon="res://icon.png"
 
 [autoload]
