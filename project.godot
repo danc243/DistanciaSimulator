@@ -38,6 +38,11 @@ _global_script_classes=[ {
 "class": "WindowGame",
 "language": "GDScript",
 "path": "res://actors/window_game/window_game.gd"
+}, {
+"base": "Control",
+"class": "WindowText",
+"language": "GDScript",
+"path": "res://actors/window_game/window_text.gd"
 } ]
 _global_script_class_icons={
 "Actor": "",
@@ -45,7 +50,8 @@ _global_script_class_icons={
 "MinigameLogic": "",
 "QuedateEnCasaLevel": "",
 "TimerGamer": "",
-"WindowGame": ""
+"WindowGame": "",
+"WindowText": ""
 }
 
 [application]
