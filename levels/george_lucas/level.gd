@@ -19,6 +19,21 @@ func _ready() -> void:
 	
 	_rng.randomize()
 	
+	match difficulty:
+		0:
+			_cantidadInputs = 2
+			pass
+		1:
+			_cantidadInputs = 3
+			pass
+		2:
+			_cantidadInputs = 5
+			pass
+		3:
+			_cantidadInputs = 7
+			pass
+	pass
+	
 	for i in _cantidadInputs:
 		_inputsArray.append(_rng.randi_range(0,3))
 		itemlist.add_icon_item(load(str("res://assets/george_lucas/",_inputsArray[i],".png")),false)

@@ -1,9 +1,8 @@
-[gd_scene load_steps=4 format=2]
+[gd_scene load_steps=5 format=2]
 
 [ext_resource path="res://assets/quickscope/crosshair.png" type="Texture" id=1]
 [ext_resource path="res://actors/quickscope/Crosshair.gd" type="Script" id=2]
-
-
+[ext_resource path="res://assets/wilhelmSCREAM.wav" type="AudioStream" id=3]
 
 [sub_resource type="RectangleShape2D" id=1]
 extents = Vector2( 58, 54 )
@@ -23,4 +22,8 @@ collision_mask = 2
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="Shooting"]
 shape = SubResource( 1 )
+
+[node name="AudioStreamPlayer" type="AudioStreamPlayer" parent="."]
+stream = ExtResource( 3 )
+volume_db = 8.0
 [connection signal="input_event" from="Shooting" to="." method="_on_Shooting_input_event"]

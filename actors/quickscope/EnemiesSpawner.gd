@@ -1,5 +1,7 @@
 extends Node2D
 
+class_name Enemy_spawner
+
 export var centro: = Vector2.ZERO
 export var left: = 0.0
 export var right: = 1920.0

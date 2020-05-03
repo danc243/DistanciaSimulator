@@ -10,6 +10,22 @@ var _rng = RandomNumberGenerator.new()
 
 func _ready() -> void:
 	_rng.randomize()
+	
+	match difficulty:
+		0:
+			_cantidadDePersonas = 3
+			pass
+		1:
+			_cantidadDePersonas = 5
+			pass
+		2:
+			_cantidadDePersonas = 15
+			pass
+		3:
+			_cantidadDePersonas = 25
+			pass
+	pass
+	
 	_buscado = _set_buscado()
 	_spawnRandomPeople()
 

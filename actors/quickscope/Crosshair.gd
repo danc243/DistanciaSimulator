@@ -2,6 +2,8 @@ extends Node2D
 
 var _losQuicks:= VideoPlayer.new()
 
+onready var _audio = $AudioStreamPlayer
+
 func _ready() -> void:
 	_losQuicks = get_node("../Quickscope")
 
@@ -20,6 +22,8 @@ func _input(event: InputEvent) -> void:
 		for si in oye:
 			si.queue_free()
 			find_parent("TestLevel").enemy_killed()
+			if(!_audio.playing):
+				_audio.play()
 		
 		# If you are here, play sound
 		# Also show hitmark for x amout of seconds and quickscore animation

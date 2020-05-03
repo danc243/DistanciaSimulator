@@ -8,7 +8,7 @@
 extents = Vector2( 28.7157, 28.1896 )
 
 [node name="Virus" type="KinematicBody2D"]
-collision_mask = 8
+collision_layer = 2
 script = ExtResource( 1 )
 
 [node name="icon" type="Sprite" parent="."]

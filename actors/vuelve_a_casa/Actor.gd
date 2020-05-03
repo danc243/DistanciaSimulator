@@ -6,6 +6,7 @@ var _velocity: = Vector2.ZERO
 onready var icon = $icon
 
 func _physics_process(delta: float) -> void:
+	self.position
 	if(_velocity.length()>0.0):
 		icon.rotation = _velocity.angle()
 	pass
@@ -21,3 +22,7 @@ func calc_move_velocity(
 	out.y = speed.y * direction.y
 	
 	return out
+
+
+func set_speed(speed: Vector2):
+	self.speed = speed

@@ -25,8 +25,6 @@ func _process(delta):
 		rect.color = newColor
 
 func initTimer(wait_time: float):
-	if !timer.is_stopped():
-		timer.stop()
 	timer.wait_time = wait_time
 	_initialTime  = wait_time
 	timer.start()

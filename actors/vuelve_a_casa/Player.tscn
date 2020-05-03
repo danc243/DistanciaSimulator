@@ -41,3 +41,4 @@ limit_bottom = 896
 texture = ExtResource( 3 )
 energy = 0.7
 shadow_enabled = true
+[connection signal="body_entered" from="Detector" to="." method="_on_Detector_body_entered"]

@@ -7,22 +7,24 @@ onready var timerGamer  = $WindowContainer/TimerGame
 onready var life_label = $Lifes/LifeLabel
 onready var streak_label = $Streak/StreakLabel
 
+onready var audio = $Audio
+
 var currentNode = null
 var main_menu_reference: MainMenu
 const cantidadDeMinijuegos: int = 6
 
-var lifes = 50
+var lifes = 3
 var streak = 0
 
 var max_lifes = 5
 var max_streak = 5 
 
 var _dificultad = 1
-var _lastGame = 0
-var _timer = 15
+var _lastGame = -1
 var _minijuegosGanados = 0
 
 var _rng = RandomNumberGenerator.new()
+var _timer = 8.0
 
 signal timerEndsParent
 signal close_game
@@ -41,7 +43,7 @@ func _ready():
 	
 	if(state):
 		_dificultad = 0
-		_timer = 20
+		_timer = 10.0
 	
 	_updateLabels()
 	_loadLevel()
@@ -76,12 +78,14 @@ func _loadLevel():
 			st = "/escapa/escapa.tscn"
 		5:
 			st = "/george_lucas/level.tscn"
+	
 	_lastGame = ran
+	
 	st = str("res://levels", st)
 	currentNode = load(st).instance() as MinigameLogic
 	currentNode.init(_dificultad, self)
 	viewport.add_child(currentNode)
-	timerGamer.initTimer(10)
+	timerGamer.initTimer(_timer)
 
 
 func you_lose_game():
@@ -117,18 +121,19 @@ func _calDificultad():
 		0:
 			if(_minijuegosGanados == cantidadDeMinijuegos ):
 				_dificultad=1
-				_timer = 10
+				_timer = 8.0
 				var savegame = get_node("/root/SaveGame")
 				savegame.set_first_time_playing(false)
 		1:
 			if(_minijuegosGanados > 3):
 				_dificultad=2
-				_timer = 8
+				_timer = 5.0
 			pass
 		2:
 			if(_minijuegosGanados > 8):
 				_dificultad=3
-				_timer = 5
+				_timer = 4.0
+				#audio.stream
 			pass
 
 	pass
@@ -164,3 +169,7 @@ func _on_show_quedate_en_casa():
 func on_show_escapa_txt():
 	main_menu_reference.escapa_button.visible = true
 
+
+
+func _on_Audio_finished() -> void:
+	audio.play()
