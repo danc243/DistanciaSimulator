@@ -62,9 +62,6 @@ func _loadLevel():
 			ran = _rng.randi_range(0, cantidadDeMinijuegos - 1)
 	else:
 		ran = _minijuegosGanados
-		pass
-
-	
 	var st: String = ""
 	match ran:
 		0:
@@ -79,7 +76,7 @@ func _loadLevel():
 			st = "/escapa/escapa.tscn"
 		5:
 			st = "/george_lucas/level.tscn"
-	
+	_lastGame = ran
 	st = str("res://levels", st)
 	currentNode = load(st).instance() as MinigameLogic
 	currentNode.init(_dificultad, self)
@@ -160,4 +157,10 @@ func _on_show_quickes_copes():
 	
 func _on_show_vuelve_casa():
 	main_menu_reference.vuelve_casa_button.visible = true
+	
+func _on_show_quedate_en_casa():
+	main_menu_reference.quedate_en_casa_button.visible = true
+
+func on_show_escapa_txt():
+	main_menu_reference.escapa_button.visible = true
 
