@@ -1,7 +1,10 @@
-[gd_scene load_steps=5 format=2]
+[gd_scene load_steps=8 format=2]
 
 [ext_resource path="res://levels/quedate_en_casa/qudate_en_casa.gd" type="Script" id=1]
-[ext_resource path="res://icon.png" type="Texture" id=2]
+[ext_resource path="res://assets/vuelve_a_casa/Chad.png" type="Texture" id=2]
+[ext_resource path="res://assets/quedate/casa_de_chad.png" type="Texture" id=3]
+[ext_resource path="res://assets/intento/caster.png" type="Texture" id=4]
+[ext_resource path="res://assets/quedate/burger.png" type="Texture" id=5]
 
 [sub_resource type="RectangleShape2D" id=1]
 extents = Vector2( 32.4359, 33.6853 )
@@ -11,13 +14,32 @@ extents = Vector2( 274.186, 208.575 )
 
 [node name="QuedateEnCasa" type="Node"]
 script = ExtResource( 1 )
+__meta__ = {
+"_edit_horizontal_guides_": [ 600.0 ],
+"_edit_vertical_guides_": [ 800.0 ]
+}
 
 [node name="Node2D" type="Node2D" parent="."]
+
+[node name="caster" type="Sprite" parent="Node2D"]
+position = Vector2( 397, 73 )
+scale = Vector2( 26.2344, 6 )
+texture = ExtResource( 4 )
+
+[node name="casa_de_chad" type="Sprite" parent="Node2D"]
+position = Vector2( 414.188, 371.875 )
+scale = Vector2( 1.91204, 1.24319 )
+texture = ExtResource( 3 )
+
+[node name="burger" type="Sprite" parent="Node2D"]
+position = Vector2( 405, 91 )
+texture = ExtResource( 5 )
 
 [node name="AreaCharacter" type="Area2D" parent="Node2D"]
 position = Vector2( 400, 400 )
 
 [node name="character" type="Sprite" parent="Node2D/AreaCharacter"]
+rotation = -1.5708
 texture = ExtResource( 2 )
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="Node2D/AreaCharacter"]

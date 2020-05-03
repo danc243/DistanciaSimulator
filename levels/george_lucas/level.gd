@@ -7,9 +7,9 @@ var _inputActual = 0
 var _stillPlaying = true
 var _LucasState
 onready var _victoryTimer = $Timer
+onready var _lucas = $Lucas
 
 var _cantidadInputs: int = 5
-
 
 
 func _ready() -> void:
@@ -67,6 +67,8 @@ func _goodOrBadInput(i: int):
 		have_lost()
 		return
 	if(_inputActual==_cantidadInputs):
+		_lucas.texture = load("res://assets/george_lucas/Lucas_2.png")
+		
 		connect("show_txt", _window_game, "_on_show_bee_movie_txt")
 		emit_signal("show_txt")
 		disconnect("show_txt", _window_game, "_on_show_bee_movie_txt")

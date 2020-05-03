@@ -1,7 +1,8 @@
-[gd_scene load_steps=4 format=2]
+[gd_scene load_steps=5 format=2]
 
 [ext_resource path="res://levels/george_lucas/level.gd" type="Script" id=1]
-[ext_resource path="res://assets/quickscope/cursed.jpg" type="Texture" id=2]
+[ext_resource path="res://assets/george_lucas/34-1.jpg" type="Texture" id=2]
+[ext_resource path="res://assets/george_lucas/Lucas_1.png" type="Texture" id=3]
 
 [sub_resource type="StyleBoxEmpty" id=1]
 
@@ -14,8 +15,13 @@ __meta__ = {
 
 [node name="cursed" type="Sprite" parent="."]
 position = Vector2( 400, 300 )
-scale = Vector2( 1.3245, 1.76471 )
+scale = Vector2( 0.913242, 1.21704 )
 texture = ExtResource( 2 )
+
+[node name="Lucas" type="Sprite" parent="."]
+position = Vector2( 616, 300 )
+scale = Vector2( 0.310287, 0.379747 )
+texture = ExtResource( 3 )
 
 [node name="Control" type="Control" parent="."]
 anchor_right = 1.0

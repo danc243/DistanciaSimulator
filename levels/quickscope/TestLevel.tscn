@@ -1,11 +1,12 @@
-[gd_scene load_steps=10 format=2]
+[gd_scene load_steps=11 format=2]
 
 [ext_resource path="res://actors/quickscope/Crosshair.tscn" type="PackedScene" id=1]
-[ext_resource path="res://assets/quickscope/cursed.jpg" type="Texture" id=2]
+[ext_resource path="res://assets/quickscope/png-window-open-window-png-2400.png" type="Texture" id=2]
 [ext_resource path="res://assets/quickscope/quickly.webm" type="VideoStream" id=3]
 [ext_resource path="res://levels/quickscope/Quickscope.gd" type="Script" id=4]
 [ext_resource path="res://actors/quickscope/EnemiesSpawner.tscn" type="PackedScene" id=5]
 [ext_resource path="res://levels/quickscope/TestLevel.gd" type="Script" id=6]
+[ext_resource path="res://assets/quickscope/wasteland.png" type="Texture" id=7]
 
 [sub_resource type="Shader" id=1]
 code = "shader_type canvas_item;
@@ -35,10 +36,19 @@ extents = Vector2( 28.1931, 307.099 )
 
 [node name="TestLevel" type="Node"]
 script = ExtResource( 6 )
+__meta__ = {
+"_edit_horizontal_guides_": [ 600.0 ],
+"_edit_vertical_guides_": [ 800.0 ]
+}
 
 [node name="cursed" type="Sprite" parent="."]
-position = Vector2( 400, 300 )
-scale = Vector2( 1.3245, 1.76471 )
+position = Vector2( 394.994, 295.745 )
+scale = Vector2( 0.362511, 0.413719 )
+texture = ExtResource( 7 )
+
+[node name="png-window-open-window-png-2400" type="Sprite" parent="cursed"]
+position = Vector2( 17.9482, -0.592972 )
+scale = Vector2( 0.955142, 0.712735 )
 texture = ExtResource( 2 )
 
 [node name="Spawner" parent="." instance=ExtResource( 5 )]
