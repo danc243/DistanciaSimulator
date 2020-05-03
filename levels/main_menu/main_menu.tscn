@@ -92,10 +92,10 @@ __meta__ = {
 [node name="Mensaje Bee Movie" parent="buttons" instance=ExtResource( 1 )]
 anchor_right = 0.0
 anchor_bottom = 0.0
-margin_left = 80.1523
-margin_top = 236.381
-margin_right = 144.152
-margin_bottom = 300.381
+margin_left = 80.0
+margin_top = 236.0
+margin_right = 144.0
+margin_bottom = 300.0
 icon = ExtResource( 5 )
 flat = true
 expand_icon = true
@@ -129,6 +129,15 @@ margin_left = 80.0
 margin_top = 470.638
 margin_right = 68.48
 margin_bottom = 450.398
+icon = ExtResource( 5 )
+flat = true
+expand_icon = true
+
+[node name="Vuelve a casa" parent="buttons" instance=ExtResource( 1 )]
+margin_left = 180.0
+margin_top = 236.0
+margin_right = 168.48
+margin_bottom = 215.76
 icon = ExtResource( 5 )
 flat = true
 expand_icon = true
@@ -216,10 +225,15 @@ visible = false
 
 [node name="QuickesCopes" parent="." instance=ExtResource( 7 )]
 visible = false
+
+[node name="Vuelve a casa" parent="." instance=ExtResource( 7 )]
+visible = false
 [connection signal="on_pressed_button" from="buttons/Mensaje Bee Movie" to="." method="_on_Mensaje_on_pressed_button"]
 [connection signal="on_pressed_button" from="buttons/Covid 20 Electric Boogaloo" to="." method="_on_Game_Icon_on_pressed_button"]
 [connection signal="on_pressed_button" from="buttons/Se Busca" to="." method="_on_Se_Busca_on_pressed_button"]
 [connection signal="on_pressed_button" from="buttons/Qüickes Copes" to="." method="_on_Qickes_Copes_on_pressed_button"]
+[connection signal="on_pressed_button" from="buttons/Vuelve a casa" to="." method="_on_Vuelve_a_casa_on_pressed_button"]
 [connection signal="close_window" from="LaPrecuelaBeeMovie" to="." method="_on_LaPrecuelaBeeMovie_close_window"]
 [connection signal="close_window" from="Se Busca" to="." method="_on_Se_Busca_close_window"]
 [connection signal="close_window" from="QuickesCopes" to="." method="_on_QuickesCopes_close_window"]
+[connection signal="close_window" from="Vuelve a casa" to="." method="_on_Vuelve_a_casa_close_window"]

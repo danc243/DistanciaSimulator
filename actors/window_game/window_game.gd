@@ -157,4 +157,7 @@ func _on_show_se_busca_txt():
 	
 func _on_show_quickes_copes():
 	main_menu_reference.quickes_copes_button.visible = true
+	
+func _on_show_vuelve_casa():
+	main_menu_reference.vuelve_casa_button.visible = true
 

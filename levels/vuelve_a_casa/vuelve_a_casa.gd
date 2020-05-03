@@ -25,5 +25,10 @@ func _spawnPlayer():
 
 func _process(delta):
 	if ha_ganado:
+		var savegame = get_node("/root/SaveGame")
+		savegame.set_vuelve_casa(true)
+		connect("show_txt", _window_game, "_on_show_vuelve_casa")
+		emit_signal("show_txt")
+		disconnect("show_txt", _window_game, "_on_show_vuelve_casa")
 		have_won()
 		ha_ganado = false
