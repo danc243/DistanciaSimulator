@@ -3,7 +3,7 @@
 [ext_resource path="res://levels/quedate_en_casa/qudate_en_casa.gd" type="Script" id=1]
 [ext_resource path="res://assets/vuelve_a_casa/Chad.png" type="Texture" id=2]
 [ext_resource path="res://assets/quedate/casa_de_chad.png" type="Texture" id=3]
-[ext_resource path="res://assets/intento/caster.png" type="Texture" id=4]
+[ext_resource path="res://assets/quedate/240_F_271587542_fwL5VU5yo6uy6RWCI7GvkypHPOvGWQk2.jpg" type="Texture" id=4]
 [ext_resource path="res://assets/quedate/burger.png" type="Texture" id=5]
 
 [sub_resource type="RectangleShape2D" id=1]
@@ -21,9 +21,9 @@ __meta__ = {
 
 [node name="Node2D" type="Node2D" parent="."]
 
-[node name="caster" type="Sprite" parent="Node2D"]
-position = Vector2( 397, 73 )
-scale = Vector2( 26.2344, 6 )
+[node name="240_F_271587542_fwL5VU5yo6uy6RWCI7GvkypHPOvGWQk2" type="Sprite" parent="Node2D"]
+position = Vector2( 398.25, 258.75 )
+scale = Vector2( 2.16099, 2.14375 )
 texture = ExtResource( 4 )
 
 [node name="casa_de_chad" type="Sprite" parent="Node2D"]
