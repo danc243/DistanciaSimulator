@@ -13,4 +13,9 @@ func _on_AreaCharacter_area_entered(area):
 	have_lost()
 
 func _timer_end():
+	var savegame = get_node("/root/SaveGame")
+	savegame.set_quedate_en_casa(true)
+	connect("show_txt", _window_game, "_on_show_quedate_en_casa")
+	emit_signal("show_txt")
+	disconnect("show_txt", _window_game, "_on_show_quedate_en_casa")
 	have_won()

@@ -40,5 +40,9 @@ func _process(delta):
 		ha_perdido = false
 
 func _timer_end():
+	var savegame = get_node("/root/SaveGame")
+	savegame.set_escapa(true)
+	connect("show_txt", _window_game, "on_show_escapa_txt")
+	emit_signal("show_txt")
+	disconnect("show_txt", _window_game, "on_show_escapa_txt")
 	have_won()
-	pass
